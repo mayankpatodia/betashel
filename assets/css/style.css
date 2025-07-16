@@ -23247,6 +23247,11 @@ main {
 .rts-footer-area-one .footer-left-area p.disc {
   color: #74787C;
 }
+
+.footer-main-wrapper-one .footer-single-wized-start .title {
+  color: #fff !important;
+}
+
 @media only screen and (max-width: 1199px) {
   .rts-footer-area-one .footer-left-area p.disc br {
     display: none;
@@ -29555,6 +29560,155 @@ body.servi-ce-details .rts-footer-two-area {
 .header-three .logo-area-white {
   display: none;
 }
+
+/* ========================================
+   ELEVATIVE CUSTOM STYLING
+   Unique brand elements and customizations
+======================================== */
+
+/* Brand-specific enhancements */
+.elevative-brand-enhancement {
+  background: linear-gradient(135deg, #000 0%, #333 50%, #000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.elevative-brand-enhancement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: elevativeShine 3s infinite;
+}
+
+@keyframes elevativeShine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Unique button hover effects */
+.rts-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom service card animations */
+.single-item-service-one {
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.single-item-service-one:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.single-item-service-one:hover .list-img img {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+/* Custom logo animation */
+.logo img {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  transform: scale(1.05);
+}
+
+/* Custom footer styling */
+.rts-footer-area-one {
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+  position: relative;
+}
+
+.rts-footer-area-one::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #333, transparent);
+}
+
+/* Custom social icons */
+.rts-social-area-one ul li a {
+  background: linear-gradient(135deg, #333 0%, #000 100%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.rts-social-area-one ul li a:hover {
+  background: linear-gradient(135deg, #000 0%, #333 100%);
+  transform: translateY(-3px) rotate(360deg);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Custom pricing table styling */
+.pricing-table-homepage {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.pricing-table-homepage th {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+.pricing-table-homepage th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #000, #333, #000);
+}
+
+/* Custom bundle cards */
+.bundle-card-homepage {
+  position: relative;
+  overflow: hidden;
+}
+
+.bundle-card-homepage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: all 0.5s ease;
+}
+
+.bundle-card-homepage:hover::before {
+  left: 100%;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   END ELEVATIVE CUSTOM STYLING
+======================================== */
+
 /*# sourceMappingURL=../maps/style.css.map */
 
 

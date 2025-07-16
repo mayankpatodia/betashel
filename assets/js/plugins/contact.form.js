@@ -1,14 +1,8 @@
 /**
- *
- * -----------------------------------------------------------------------------
- *
- * Template : Bizup - Creative Agency & Portfolio HTML Template
- * Author : reacthemes
- * Author URI : https://reactheme.com/ 
- *
- * -----------------------------------------------------------------------------
- *
- **/
+ * Elevative Contact Form Handler
+ * Custom form validation and submission handling
+ * for Elevative digital agency website
+ */
 
 (function ($) {
     'use strict';
@@ -52,7 +46,7 @@
                 if (data.responseText !== '') {
                     $(formMessages).text(data.responseText);
                 } else {
-                    $(formMessages).text('Oops! An error occured and your message could not be sent.');
+                    $(formMessages).text('We apologize, but there was an issue sending your message. Please try again or contact us directly at codevergelabs@gmail.com');
                 }
             });
     });

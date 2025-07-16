@@ -5,14 +5,153 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-style-mode" content="1">
+    
+    <!-- SEO Meta Tags -->
+    <title>Elevative - Digital Growth Agency | Web Development, Branding & Marketing Services</title>
+    <meta name="description" content="Elevative transforms your vision into powerful digital experiences. We offer end-to-end web development, app development, branding, and WhatsApp marketing services to accelerate your business growth.">
+    <meta name="keywords" content="digital agency, web development, app development, branding services, WhatsApp marketing, SEO services, custom websites, Indian digital agency">
+    <meta name="author" content="Elevative - Code Verge Labs">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="IN">
+    <meta name="geo.placename" content="India">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Elevative - Digital Growth Agency | Your Ambition, Engineered">
+    <meta property="og:description" content="A complete suite of digital services—from branding to development and marketing—designed to fuel your growth. Transform your unique vision into a powerful online presence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elevative.xyz">
+    <meta property="og:image" content="https://elevative.xyz/assets/images/logo/logo-black.png">
+    <meta property="og:site_name" content="Elevative">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elevative - Digital Growth Agency | Your Ambition, Engineered">
+    <meta name="twitter:description" content="Transform your unique vision into a powerful online presence with our complete suite of digital services.">
+    <meta name="twitter:image" content="https://elevative.xyz/assets/images/logo/logo-black.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://elevative.xyz">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="assets/images/logo/logo-white.png" as="image">
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/icon-white.png">
-    <title>Elevative</title>
-    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
-    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="apple-touch-icon" href="assets/images/logo/icon-white.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Elevative",
+      "alternateName": "Code Verge Labs",
+      "url": "https://elevative.xyz",
+      "logo": "https://elevative.xyz/assets/images/logo/logo-black.png",
+      "description": "Digital growth agency specializing in web development, app development, branding, and marketing services",
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressLocality": "India"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-983-077-8548",
+        "contactType": "customer service",
+        "email": "codevergelabs@gmail.com",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.facebook.com/elevative",
+        "https://www.instagram.com/elevative",
+        "https://www.linkedin.com/company/elevative",
+        "https://wa.me/919830778548"
+      ],
+      "services": [
+        {
+          "@type": "Service",
+          "name": "Web Development",
+          "description": "Custom website development with responsive design and modern technologies"
+        },
+        {
+          "@type": "Service", 
+          "name": "App Development",
+          "description": "Mobile app development for iOS and Android platforms"
+        },
+        {
+          "@type": "Service",
+          "name": "Branding & Identity",
+          "description": "Complete brand identity design including logos, graphics, and brand strategies"
+        },
+        {
+          "@type": "Service",
+          "name": "WhatsApp Marketing",
+          "description": "Targeted WhatsApp marketing campaigns to boost engagement and sales"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Fallback for no-JS users -->
+    <noscript>
+        <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+        <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+        <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    </noscript>
+    
+    <!-- Custom Performance Optimizations -->
+    <style>
+        /* Critical CSS - Above the fold styles */
+        .header-area { background: #000; }
+        .banner-area { min-height: 100vh; background: #000; }
+        .title.rts_hero__title { font-size: 60px; line-height: 1.2; color: #fff; }
+        .hero__sub-title { color: #74787C; line-height: 1.6; }
+        
+        /* Custom branding enhancements */
+        .border-bottom-1 { 
+            position: relative;
+            border-bottom: 3px solid transparent;
+            background: linear-gradient(90deg, #000, #333) bottom/100% 3px no-repeat;
+        }
+        
+        /* Unique animations */
+        @keyframes elevativeGlow {
+            0% { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+            50% { box-shadow: 0 0 20px rgba(0,0,0,0.6); }
+            100% { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+        }
+        
+        .logo img:hover {
+            animation: elevativeGlow 2s ease-in-out infinite;
+        }
+        
+        /* Performance optimization */
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            will-change: transform;
+        }
+        
+        /* Reduce layout shift */
+        .banner-area { contain: layout style paint; }
+    </style>
 </head>
 
 <body class="index-one">
@@ -201,10 +340,10 @@
                             <div class="service-area-one-main-wrapper">
 
                                 <div class="single-item-service-one">
-                                    <a href="services.html">
+                                    <a>
                                         <div class="rts-img-contaciner">
                                             <figure class="list-img">
-                                                <img class="list-img" src="assets/images/product/webdesign.jpg" alt="Stream Shop">
+                                                <img class="list-img" src="assets/images/product/webdesign.jpg" alt="Professional Web Design Services">
                                             </figure>
                                         </div>
                                         <div class="list-title col-md-6">
@@ -219,10 +358,10 @@
                                     </a>
                                 </div>
                                 <div class="single-item-service-one">
-                                    <a href="services.html">
+                                    <a>
                                         <div class="rts-img-contaciner">
                                             <figure class="list-img">
-                                                <img class="list-img" src="assets/images/product/socialmarketing.jpg" alt="Stream Shop">
+                                                <img class="list-img" src="assets/images/product/socialmarketing.jpg" alt="WhatsApp and Instagram Marketing Services">
                                             </figure>
                                         </div>
                                         <div class="list-title col-md-6">
@@ -237,10 +376,10 @@
                                     </a>
                                 </div>
                                 <div class="single-item-service-one">
-                                    <a href="services.html">
+                                    <a>
                                         <div class="rts-img-contaciner">
                                             <figure class="list-img">
-                                                <img class="list-img" src="assets/images/product/webdevelopment.jpg" alt="Stream Shop">
+                                                <img class="list-img" src="assets/images/product/webdevelopment.jpg" alt="Custom Web Development Solutions">
                                             </figure>
                                         </div>
                                         <div class="list-title col-md-6">
@@ -255,10 +394,10 @@
                                     </a>
                                 </div>
                                 <div class="single-item-service-one">
-                                    <a href="services.html">
+                                    <a>
                                         <div class="rts-img-contaciner">
                                             <figure class="list-img">
-                                                <img class="list-img" src="assets/images/product/branding.jpg" alt="Stream Shop">
+                                                <img class="list-img" src="assets/images/product/branding.jpg" alt="Brand Identity and Logo Design">
                                             </figure>
                                         </div>
                                         <div class="list-title col-md-6">
@@ -273,10 +412,10 @@
                                     </a>
                                 </div>
                                 <div class="single-item-service-one">
-                                    <a href="services.html">
+                                    <a>
                                         <div class="rts-img-contaciner">
                                             <figure class="list-img">
-                                                <img class="list-img" src="assets/images/product/appdevelopment.jpg" alt="Stream Shop">
+                                                <img class="list-img" src="assets/images/product/appdevelopment.jpg" alt="Mobile App Development Services">
                                             </figure>
                                         </div>
                                         <div class="list-title col-md-6">

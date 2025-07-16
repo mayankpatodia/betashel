@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.pdf$
+
+# Allow CSS and JS files for SEO
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+
+# Sitemap location
+Sitemap: https://elevative.xyz/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1 
