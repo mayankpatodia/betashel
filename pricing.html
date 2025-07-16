@@ -6,19 +6,342 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-style-mode" content="1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/icon-white.png">
-    <title>BetaShel Pricing Table</title>
+    <title>Elevative Pricing - Flexible Solutions for Your Growth</title>
     <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
     <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
     <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
     <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Simplified Pricing Page Styles */
+        .pricing-hero {
+            background: linear-gradient(135deg, #000 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .pricing-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-hero p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            opacity: 0.9;
+        }
+        
+        .pricing-tabs {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: -30px auto 50px;
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tab-nav {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .tab-nav button {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            color: #6c757d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-nav button.active {
+            color: #000;
+            background: white;
+            border-bottom-color: #000;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 30px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .pricing-table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            min-width: 600px;
+        }
+        
+        .pricing-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .pricing-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #dee2e6;
+            vertical-align: top;
+        }
+        
+        .pricing-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .price-tag {
+            font-weight: 700;
+            color: #000;
+            font-size: 1.1rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .features-list li {
+            color: #6c757d;
+            margin-bottom: 3px;
+            margin-top: 0px;
+            font-size: 1.3rem;
+            line-height: var(--line-height-b1);
+        }
+        
+        .bundle-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .bundle-card {
+            background: linear-gradient(135deg, #000 0%, #b6b6b7 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .bundle-card h4 {
+            margin-bottom: 10px;
+        }
+        
+        .bundle-card .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .bundle-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        .bundle-card li {
+            margin: 5px 0;
+            opacity: 0.9;
+            color: #ffffff;
+        }
+        
+        .cta-btn {
+            background: white;
+            color: #000;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .contact-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .contact-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .contact-btn {
+            background: #000;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+        
+        .contact-btn.secondary {
+            background: transparent;
+            color: #000;
+            border: 2px solid #000;
+        }
+        
+        .contact-btn.secondary:hover {
+            background: #000;
+            color: white;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .process-item {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .process-number {
+            width: 40px;
+            height: 40px;
+            background: #000;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+        }
+        
+        .process-item h5 {
+            margin: 10px 0 5px;
+            color: #2c3e50;
+        }
+        
+        .process-item p {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .tab-nav {
+                flex-direction: column;
+            }
+            
+            .pricing-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .pricing-table {
+                font-size: 0.85rem;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 8px;
+                font-size: 1.1rem
+            }
+            
+            .price-tag {
+                font-size: 1.4rem
+            }
+            
+            .features-list {
+                font-size: 0.8rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .bundle-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-content {
+                padding: 15px;
+            }
+            
+            .pricing-tabs {
+                margin: -20px auto 30px;
+                border-radius: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .pricing-table {
+                min-width: 650px;
+                font-size: 1.1rem;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 6px;
+                white-space: nowrap;
+            }
+            
+            .features-list li{
+                font-size: 0.9rem;
+                line-height: 1.2rem;
+            }
+            
+            .price-tag {
+                font-size: 1.05rem;
+            }
+            
+            .tab-nav button {
+                padding: 15px 10px;
+                font-size: 1.15rem;
+            }
+        }
+    </style>
 </head>
 
 <body class="inner-page">
 
-
-    <!-- Scripts style two -->
     <!-- header area start -->
     <header class="header-area header-one header--sticky">
         <div class="header-container-one">
@@ -27,7 +350,6 @@
                     <img src="assets/images/logo/logo-white.png" alt="logo">
                 </a>
                 <div class="header-right">
-
                     <nav class="nav-area drop-down-rts">
                         <ul class="navbar-nav-1">
                             <li class="menu-item main-nav-on">
@@ -50,16 +372,11 @@
 
                     <div class="action-area">
                         <div class="menu-btn">
-
                             <div class="rts-offcanvas-wrapper">
                                 <div class="container-menu">
                                     <div class="action-menu">
                                         <div class="close-event"></div>
                                         <div class="open-event">
-                                            <!-- <div class="text">
-                        <span>Menu</span>
-                        <span>Close</span>
-                    </div> -->
                                             <div class="burger">
                                                 <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-close" data-v-649bbaab="">
                                                     <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" stroke="currentColor" stroke-width="1.2"></line>
@@ -76,7 +393,6 @@
                                 </div>
                                 <div class="rts-fs-menu">
                                     <div class="rts-fs-container row">
-
                                         <div class="rts-fs--nav col-12 col-md-6">
                                             <ul id="primary-menu" class="navbar-nav-button">
                                                 <li id="menu-item-76" class="menu-item">
@@ -96,7 +412,6 @@
                                                 </li>
                                             </ul>
                                         </div>
-
                                         <div class="rts-fs--contacts col-12 col-md-6">
                                             <div class="contact-inner">
                                                 <div class="contact-information">
@@ -118,7 +433,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +443,7 @@
         </div>
     </header>
     <!-- header area end -->
-    
+
 
     <!-- Scripts style two End -->
 
@@ -152,185 +466,289 @@
         </div>
     </div>
     <!-- rts bread crumba rea end -->
-    <!-- Scripts style two End -->
 
-    <!-- rts pricing area start -->
-    <div class="rts-pricing-area rts-section-gap position-relative bg-white" id="pricing">
-        <div class="container-2">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="grid-lines-wrapper">
-                        <div class="grid-lines">
-                            <div class="grid-line"></div>
-                            <div class="grid-line"></div>
-                            <div class="grid-line"></div>
-                            <div class="grid-line"></div>
-                        </div>
+
+    <!-- Main Pricing Section -->
+    <section class="rts-section-gap" style="background-color: #fff;">
+        <div class="container">
+            <div class="pricing-tabs">
+                <div class="tab-nav">
+                    <button class="tab-btn active" onclick="openTab('project-based')">
+                        <i class="fa-solid fa-code"></i> Project-Based
+                    </button>
+                    <button class="tab-btn" onclick="openTab('monthly-retainers')">
+                        <i class="fa-solid fa-calendar-days"></i> Monthly Retainers
+                    </button>
+                    <button class="tab-btn" onclick="openTab('bundles')">
+                        <i class="fa-solid fa-box"></i> Bundle Packages
+                    </button>
+                </div>
+
+                <!-- Project-Based Tab -->
+                <div id="project-based" class="tab-content active">
+                    <div class="pricing-table-container">
+                        <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Package</th>
+                                <th>Price</th>
+                                <th>Key Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3"><strong>Website Development</strong></td>
+                                <td>Basic Business Site</td>
+                                <td><span class="price-tag">₹20,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>5 pages, responsive design</li>
+                                        <li>Basic SEO, contact form</li>
+                                        <li>3 rounds of revisions</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Professional Website</td>
+                                <td><span class="price-tag">₹30,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>10 pages, CMS integration</li>
+                                        <li>Advanced SEO, blog setup</li>
+                                        <li>Analytics integration</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>E-commerce Solution</td>
+                                <td><span class="price-tag">₹40,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>Payment gateway, inventory</li>
+                                        <li>Order tracking, security</li>
+                                        <li>Admin dashboard</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>App Development</strong></td>
+                                <td>Basic MVP App</td>
+                                <td><span class="price-tag">Starting from ₹30,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>Cross-platform development</li>
+                                        <li>Core features, basic UI/UX</li>
+                                        <li>App store submission</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Feature-Rich App</td>
+                                <td><span class="price-tag">Starting from ₹50,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>Advanced features, custom UI</li>
+                                        <li>Backend API, push notifications</li>
+                                        <li>Analytics integration</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3"><strong>Branding & Design</strong></td>
+                                <td>Basic Logo</td>
+                                <td><span class="price-tag">₹10,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>3 concepts, 2 revisions</li>
+                                        <li>High-res files, basic guidelines</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Complete Branding</td>
+                                <td><span class="price-tag">₹20,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>Brand identity, style guide</li>
+                                        <li>Stationery, social templates</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Graphic Design</td>
+                                <td><span class="price-tag">₹10,000</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li>Social media graphics</li>
+                                        <li>Brochures, marketing materials</li>
+                                    </ul>
+                                                                 </td>
+                             </tr>
+                         </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
-                    <div class="pricing-left-area">
-                        <div class="title-area">
-                            <span class="sub-title">Pricing</span>
-                            <h2 class="title mt--30 quote">Affordable <br>
-                                Pricing Plans to <br>
-                                Meet Your Needs</h2>
-                        </div>
-                    </div>
-                    <div class="accordion-area-start-one">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item rts-slide-up-gsap">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        How much will my project cost?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Since every project is unique, we provide a detailed custom quote after a 
-                                        consultation to ensure you only pay for what your brand needs.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item rts-slide-up-gsap">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        How long will my project take to complete?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Timelines vary, but a standard website takes 4-8 weeks. We provide 
-                                        a detailed project timeline with clear milestones in every official proposal.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item rts-slide-up-gsap">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        What's the process after I choose a plan?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Our collaborative process involves Discovery, Strategy, and Development. 
-                                        We work with you at every step to ensure the final result aligns with your vision.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item rts-slide-up-gsap">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        Do you offer support after the project is launched?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Yes, your launch is just the beginning. We offer ongoing support packages including 
-                                        maintenance, content updates, and marketing for your brand's continued growth.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                <!-- Monthly Retainers Tab -->
+                <div id="monthly-retainers" class="tab-content">
+                    <div class="pricing-table-container">
+                        <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Basic Plan</th>
+                                <th>Advanced Plan</th>
+                                <th>Key Differences</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SEO Services</strong></td>
+                                <td><span class="price-tag">₹10,000/month</span></td>
+                                <td><span class="price-tag">₹20,000/month</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li><strong>Basic:</strong> Keyword research, on-page SEO, monthly reports</li>
+                                        <li><strong>Advanced:</strong> Link building, competitor analysis, weekly reports</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>WhatsApp Marketing</strong></td>
+                                <td><span class="price-tag">₹10,000/month</span></td>
+                                <td><span class="price-tag">₹20,000/month</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li><strong>Basic:</strong> 1K messages, campaign setup, basic automation</li>
+                                        <li><strong>Advanced:</strong> 5K messages, A/B testing, detailed analytics</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Website Maintenance</strong></td>
+                                <td><span class="price-tag">₹10,000/month</span></td>
+                                <td><span class="price-tag">₹20,000/month</span></td>
+                                <td>
+                                    <ul class="features-list">
+                                        <li><strong>Basic:</strong> Security updates, backups, basic support</li>
+                                        <li><strong>Advanced:</strong> Priority fixes, content updates, performance optimization</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                                                 </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-12 pl--100 pl_md--15 pl_sm--15 plr_md--20 plr_sm--20">
-                    <div class="row g-5 rts-slide-left-gsap">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-pricing-area-start active card-tilt">
-                                <span class="pre-title">Starter Spark</span>
-                                <h2 class="title">$199/<span>Per Month</span></h2>
-                                <p class="dsic">
-                                    Ideal for new brands and startups.
-                                </p>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Logo Design & Basic Brand Guidelines</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>5-Page Website Design & Development</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Basic SEO Setup</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Social Media Account Setup</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Social Media Profile Graphics</p>
-                                </div>
-                                <a href="#" class="pricing-btn">Choose Package</a>
-                            </div>
+
+                <!-- Bundle Packages Tab -->
+                <div id="bundles" class="tab-content">
+                    <div class="bundle-cards">
+                        <div class="bundle-card">
+                            <h4><i class="fa-solid fa-rocket"></i> Startup Launch</h4>
+                            <div class="price">₹30,000</div>
+                            <ul>
+                                <li>✓ Logo & Brand Identity</li>
+                                <li>✓ Professional Website</li>
+                                <li>✓ Basic SEO Setup</li>
+                                <li>✓ Social Media Setup</li>
+                            </ul>
+                            <a href="#" class="cta-btn">Get Started</a>
                         </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="single-pricing-area-start card-tilt">
-                                <span class="pre-title">Growth Catalyst</span>
-                                <h2 class="title">$399/<span>Per Year</span></h2>
-                                <p class="dsic">
-                                    Perfect for businesses ready to scale.
-                                </p>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Comprehensive Branding & Identity</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Custom Website with CMS Integration</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>SEO & Keyword Strategy</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Instagram & WhatsApp Marketing</p>
-                                </div>
-                                <div class="single-fc">
-                                    <i class="fa-solid fa-check"></i>
-                                    <p>Monthly Analytics Report</p>
-                                </div>
-                                <a href="#" class="pricing-btn">Choose Package</a>
-                            </div>
+                        
+                        <div class="bundle-card">
+                            <h4><i class="fa-solid fa-store"></i> E-commerce Builder</h4>
+                            <div class="price">₹50,000</div>
+                            <ul>
+                                <li>✓ E-commerce Website</li>
+                                <li>✓ Payment Integration</li>
+                                <li>✓ SEO & Marketing</li>
+                                <li>✓ Order Management</li>
+                            </ul>
+                            <a href="#" class="cta-btn">Get Started</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="btn--area-center">
-                        <a href="#" class="learn-more-btn">Custom Quote
-                            <i class="fa-solid fa-arrow-up-right"></i></a>
+                        
+                        <div class="bundle-card">
+                            <h4><i class="fa-solid fa-magic-wand-sparkles"></i> Brand Transformation</h4>
+                            <div class="price">₹70,000</div>
+                            <ul>
+                                <li>✓ Complete Rebranding</li>
+                                <li>✓ New Website Design</li>
+                                <li>✓ Content Strategy</li>
+                                <li>✓ Launch Campaign</li>
+                            </ul>
+                            <a href="#" class="cta-btn">Get Started</a>
+                        </div>
+                        
+                        <div class="bundle-card">
+                            <h4><i class="fa-solid fa-puzzle-piece"></i> Custom Solution</h4>
+                            <div class="price">Custom Quote</div>
+                            <ul>
+                                <li>✓ Tailored Requirements</li>
+                                <li>✓ Custom Technology</li>
+                                <li>✓ System Integration</li>
+                                <li>✓ Dedicated Support</li>
+                            </ul>
+                            <a href="#" class="cta-btn">Consult Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- rts pricing area end -->
+    </section>
 
+    <!-- How We Work -->
+    <section class="contact-section">
+        <div class="container">
+            <h3>Our Simple Process</h3>
+            <div class="process-grid">
+                <div class="process-item">
+                    <div class="process-number">1</div>
+                    <h5>Discovery Call</h5>
+                    <p>Free consultation to understand your needs</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-number">2</div>
+                    <h5>Custom Quote</h5>
+                    <p>Detailed proposal with clear deliverables</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-number">3</div>
+                    <h5>Development</h5>
+                    <p>Regular updates and milestone progress</p>
+                </div>
+                <div class="process-item">
+                    <div class="process-number">4</div>
+                    <h5>Launch & Support</h5>
+                    <p>Delivery with ongoing support included</p>
+                </div>
+            </div>
+            
+            <h3>Ready to Get Started?</h3>
+            <div class="contact-buttons">
+                <a href="#" class="contact-btn">Free Consultation</a>
+                <a href="#" class="contact-btn secondary">Get Custom Quote</a>
+                <a href="mailto:codevergelabs@gmail.com" class="contact-btn secondary">Email Us</a>
+            </div>
+            <p style="margin-top: 15px; color: #6c757d;">
+                <i class="fa-solid fa-envelope"></i> codevergelabs@gmail.com | 
+                <i class="fa-solid fa-phone"></i> +91 983 077 8548
+            </p>
+        </div>
+    </section>
 
-
-
-
-    <!-- Footer style two -->
-    <!-- rts footer two area start -->
+    <!-- Footer -->
     <div class="rts-footer-two-area bg-footer-2 bg_image-1">
         <div class="container-140">
             <div class="row">
                 <div class="col-lg-12 pt--130 pt_sm--60 pb--100 pb_sm--60">
                     <div class="footer-two-wrapper-content">
-                        <!-- footer left start -->
                         <div class="footer-left-two">
                             <a href="index.html" class="logo">
                                 <img src="assets/images/logo/logo-white.png" alt="logo">
                             </a>
                             <p class="disc">
-                                Teor facilis porta maurs ligula vivamus <br> nullam laoreet pharetra posuere.
+                                Transforming businesses through innovative digital solutions and strategic growth partnerships.
                             </p>
                             <div class="rts-social-area-one">
                                 <ul>
@@ -341,49 +759,35 @@
                                 </ul>
                             </div>
                         </div>
-                        <!-- footer left end -->
-
-                        <!-- footer right area start -->
                         <div class="footer-right-two">
-                            <!-- contact info -->
                             <div class="contact-information">
                                 <h5 class="title">Contact Info</h5>
                                 <a href="mailto:codevergelabs@gmail.com" class="mail">codevergelabs@gmail.com</a>
                                 <a href="tel:+919830778548" class="number">+91 983 077 8548</a>
                                 <a href="#" class="map">India</a>
                             </div>
-                            <!-- contact info end -->
-                            <!-- contact info -->
                             <div class="contact-information input">
                                 <h5 class="title">Subscribe Newsletter</h5>
-                                <p class="map">Subscribe our newsletter for future updates. don’t <br> worry we don’t spam your email address</p>
+                                <p class="map">Subscribe our newsletter for future updates. don't <br> worry we don't spam your email address</p>
                                 <form action="#" class="form-footer-2">
                                     <label for="email-1"><i class="fa-regular fa-envelope"></i></label>
                                     <input id="email-1" type="email" placeholder="Enter your email..." required>
                                     <button type="submit">Subscribe</button>
                                 </form>
                             </div>
-                            <!-- contact info end -->
                         </div>
-                        <!-- footer right area end -->
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <!-- copyright-area-start -->
                     <div class="copy-right-area-start-two">
                         <p class="left">2025 © Code Verge Labs. All rights reserved.</p>
                     </div>
-                    <!-- copyright-area-end -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- rts footer two area end -->
 
-    <!-- Footer style two End -->
-
-
-    <!-- Scripts style two -->
+    <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
         <span class="bar top-bar"></span>
         <span class="bar down-bar"></span>
@@ -391,81 +795,77 @@
         <span class="loading-counter"> </span>
     </div>
 
-
     <div class="bg-noise"></div>
 
-
-    <!-- back to top start -->
+    <!-- Back to Top -->
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
         </svg>
     </div>
-    <!-- back to top end -->
 
-
-
-    <!-- pre loader start -->
+    <!-- Cursor -->
     <div class="rts-cursor cursor-outer" data-default="yes" data-link="yes" data-slider="no">
         <span class="fn-cursor"></span>
     </div>
     <div class="rts-cursor cursor-inner" data-default="yes" data-link="yes" data-slider="no">
         <span class="fn-cursor">
-        <span class="fn-left"></span>
-        <span class="fn-right"></span>
+            <span class="fn-left"></span>
+            <span class="fn-right"></span>
         </span>
     </div>
-    <!-- pre loader end -->
 
-
-
-    <!-- dark light switcher start-->
+    <!-- Dark/Light Switcher -->
     <div class="modal-sidebar-scroll rts-dark-light">
         <ul>
             <li class="go-dark-w"><span>Dark</span><i class="rts-go-dark fal fa-moon"></i></li>
             <li class="go-light-w"><span>Light</span><i class="rts-go-light fa-light fa-brightness"></i></li>
         </ul>
     </div>
-    <!-- dark light switcher end -->
 
-
-
+    <!-- Scripts -->
     <script defer src="assets/js/vendor/jquery.min.js"></script>
     <script defer src="assets/js/plugins/bootstrap.min.js"></script>
     <script defer src="assets/js/plugins/contact.form.js"></script>
     <script defer src="assets/js/vendor/waypoint.js"></script>
     <script defer src="assets/js/plugins/swiper.js"></script>
-
-
-    <!-- for side bar sticky -->
     <script defer src="assets/js/plugins/resizer-sensor.js"></script>
     <script defer src="assets/js/plugins/sticky-sidebar.js"></script>
-    <!-- for side bar sticky end-->
-
     <script defer src="assets/js/plugins/isotop.js"></script>
     <script defer src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
-
     <script defer src="assets/js/plugins/smoothscroll-varticle.js"></script>
     <script defer src="assets/js/vendor/gsap.js"></script>
     <script defer src="assets/js/plugins/scrolltiger.js"></script>
     <script defer src="assets/js/plugins/scrolltoplugin.js"></script>
     <script defer src="assets/js/plugins/splittext.js"></script>
     <script defer src="assets/js/plugins/smoothscroll.js"></script>
-
-    <!-- title opacity scroll magix -->
     <script defer src="assets/js/plugins/scrollmagic.js"></script>
     <script defer src="assets/js/plugins/animate-scrollmagic.js"></script>
-    <!-- title opacity scroll magic end -->
-
-
-
     <script defer src="assets/js/plugins/tilt.js"></script>
     <script defer src="assets/js/plugins/counterup.js"></script>
-
     <script defer src="assets/js/vendor/waw.js"></script>
-    <!-- custom javascripts -->
     <script defer src="assets/js/main.js"></script>
-    <!-- Scripts style two End -->
+
+    <!-- Tab Functionality -->
+    <script>
+        function openTab(tabName) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Remove active class from all tab buttons
+            var tabButtons = document.getElementsByClassName('tab-btn');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show selected tab and mark button as active
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 
 </html>
