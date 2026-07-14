@@ -1,3 +1,112 @@
+<?php
+// PHP Script for Form Submission and Database Insertion
+
+// 1. Database Configuration (IMPORTANT: Replace with your actual credentials)
+define('DB_SERVER', '127.0.0.1:3306'); // Your database server (e.g., 'localhost' or an IP address)
+define('DB_USERNAME', 'u530889908_elevative_db'); // Your database username
+define('DB_PASSWORD', 'M/eRg@*!Ja9'); // Your database password
+define('DB_NAME', 'u530889908_elevative'); // The name of your database
+
+// 2. Initialize variables for form feedback
+$name = $email = $interests = $project_budget = $project_description = '';
+$name_err = $email_err = $interests_err = $project_budget_err = $project_description_err = '';
+$success_message = '';
+$error_message = '';
+
+// 3. Process form submission when it's posted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Validate Full Name
+    if (empty(trim($_POST["full_name"]))) {
+        $name_err = "Please enter your full name.";
+    } else {
+        $name = trim($_POST["full_name"]);
+    }
+
+    // Validate Email
+    if (empty(trim($_POST["email"]))) {
+        $email_err = "Please enter your email address.";
+    } elseif (!filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
+        $email_err = "Please enter a valid email address.";
+    } else {
+        $email = trim($_POST["email"]);
+    }
+
+    // Validate Interests
+    if (empty($_POST["interests"])) {
+        $interests_err = "Please select at least one interest.";
+    } else {
+        // If multiple checkboxes are used, $_POST["interests"] will be an array.
+        // Convert the array to a comma-separated string.
+        if (is_array($_POST["interests"])) {
+            $interests = implode(", ", $_POST["interests"]);
+        } else {
+            // If it's a single select/radio, it will be a string
+            $interests = trim($_POST["interests"]);
+        }
+    }
+
+    // Validate Project Budget
+    if (empty(trim($_POST["project_budget"]))) {
+        $project_budget_err = "Please select your project budget.";
+    } else {
+        $project_budget = trim($_POST["project_budget"]);
+    }
+
+    // Validate Project Description
+    if (empty(trim($_POST["project_description"]))) {
+        $project_description_err = "Please tell us about your project.";
+    } else {
+        $project_description = trim($_POST["project_description"]);
+    }
+
+    // Check if there are no validation errors before inserting into the database
+    if (empty($name_err) && empty($email_err) && empty($interests_err) && empty($project_budget_err) && empty($project_description_err)) {
+        // 4. Connect to MySQL database
+        $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+        // Check connection
+        if ($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
+        }
+
+        // 5. Prepare an INSERT statement to prevent SQL injection
+        $sql = "INSERT INTO inquiries (full_name, email, interests, project_budget, project_description) VALUES (?, ?, ?, ?, ?)";
+
+        if ($stmt = $mysqli->prepare($sql)) {
+            // Bind parameters to the prepared statement
+            $stmt->bind_param("sssss", $param_name, $param_email, $param_interests, $param_project_budget, $param_project_description);
+
+            // Set parameters
+            $param_name = $name;
+            $param_email = $email;
+            $param_interests = $interests;
+            $param_project_budget = $project_budget;
+            $param_project_description = $project_description;
+
+            // Attempt to execute the prepared statement
+            if ($stmt->execute()) {
+                $success_message = "Thank you! Your inquiry has been submitted successfully.";
+                // Clear form fields after successful submission
+                $name = $email = $interests = $project_budget = $project_description = '';
+            } else {
+                $error_message = "Something went wrong. Please try again later. Error: " . $stmt->error;
+            }
+
+            // Close statement
+            $stmt->close();
+        } else {
+            $error_message = "Error preparing statement: " . $mysqli->error;
+        }
+
+        // Close connection
+        $mysqli->close();
+    } else {
+        $error_message = "Please correct the errors in the form.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
@@ -8,7 +117,7 @@
     
     <!-- SEO Meta Tags -->
     <title>Contact Elevative - Get Your Custom Digital Solution Quote | Love to Hear From You</title>
-    <meta name="description" content="Ready to transform your digital presence? Contact Elevative for a free consultation. Call +91 983 077 8548 or email codevergelabs@gmail.com. Let's discuss your project today.">
+    <meta name="description" content="Ready to transform your digital presence? Contact Elevative for a free consultation. Call +91 983 077 8548 or email contact@elevative.xyz. Let's discuss your project today.">
     <meta name="keywords" content="contact elevative, digital agency contact, free consultation, web development quote, get in touch, project discussion">
     <meta name="author" content="Elevative - Code Verge Labs">
     <meta name="robots" content="index, follow">
@@ -17,7 +126,7 @@
     <meta property="og:title" content="Contact Elevative - Love to Hear From You, Get in Touch!">
     <meta property="og:description" content="Ready to transform your digital presence? Contact us for a free consultation and custom project quote.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://elevative.xyz/contact.html">
+    <meta property="og:url" content="https://elevative.xyz/contact.php">
     <meta property="og:image" content="https://elevative.xyz/assets/images/logo/logo-black.png">
     
     <!-- Twitter Card Meta Tags -->
@@ -26,7 +135,7 @@
     <meta name="twitter:description" content="Ready to transform your digital presence? Contact us for a free consultation and custom project quote.">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://elevative.xyz/contact.html">
+    <link rel="canonical" href="https://elevative.xyz/contact.php">
     
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/icon-white.png">
     <link rel="apple-touch-icon" href="assets/images/logo/icon-white.png">
@@ -37,6 +146,21 @@
     <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .error-message {
+            color: #ef4444; /* Tailwind red-500 */
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .success-message {
+            color: #22c55e; /* Tailwind green-500 */
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body class="inner-page contact-page">
@@ -66,7 +190,7 @@
                             <a href="pricing.html"><span class="rolling-text">Pricing</span></a>
                         </li>
                         <li class="menu-item main-nav-on">
-                            <a href="contact.html"><span class="rolling-text">Contact</span></a>
+                            <a href="contact.php"><span class="rolling-text">Contact</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -115,7 +239,7 @@
                                                 <a href="pricing.html">Pricing</a>
                                             </li>
                                             <li class="menu-item">
-                                                <a href="contact.html">Contact</a>
+                                                <a href="contact.php">Contact</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -126,7 +250,7 @@
                                                 <h2 class="heading-title">Get In Touch</h2>
                                                 <div class="contact">
                                                     <ul>
-                                                        <li><a href="mailto:codevergelabs@gmail.com" class="mail">codevergelabs@gmail.com</a></li>
+                                                        <li><a href="mailto:contact@elevative.xyz" class="mail">contact@elevative.xyz</a></li>
                                                         <li><a href="tel:+919830778548" class="number">+91 983 077 8548</a></li>
                                                     </ul>
                                                 </div>
@@ -191,45 +315,61 @@
                                 <span>Get in touch!</span>
                             </h2>
                         </div>
-                        <form class="appoinment-h2 rts-slide-up-gsap" action="#">
+
+                        <?php if (!empty($success_message)): ?>
+                            <div class="success-message"><?php echo $success_message; ?></div>
+                        <?php endif; ?>
+                        <?php if (!empty($error_message) && empty($success_message)): ?>
+                            <div class="general-error-message"><?php echo $error_message; ?></div>
+                        <?php endif; ?>
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="appoinment-h2 rts-slide-up-gsap" method="post">
                             <div class="input-line">
                                 <div class="input-half">
-                                    <label for="name">Your Name*</label>
-                                    <input id="name" type="text" placeholder="Your full name" required>
+                                    <label for="full_name">Your Name*</label>
+                                    <input id="full_name" type="text" name="full_name" placeholder="Your full name" value="<?php echo htmlspecialchars($name); ?>" required>
+                                    <span class="error-message"><?php echo $name_err; ?></span>
                                 </div>
                                 <div class="input-half">
                                     <label for="email">Your Email*</label>
-                                    <input id="email" type="text" placeholder="your.email@company.com" required>
+                                    <input id="email" name="email" type="text" placeholder="your.email@company.com" value="<?php echo htmlspecialchars($email); ?>" required>
+                                    <span class="error-message"><?php echo $email_err; ?></span>
                                 </div>
                             </div>
                             <div class="input-line mt--40">
                                 <div class="input-half">
-                                    <label for="service">What interests you most?*</label>
-                                    <select class="form-select" aria-label="Service selection">
-                                        <option selected>Web Development</option>
-                                        <option value="app-development">App Development</option>
-                                        <option value="branding">Branding & Identity</option>
-                                        <option value="marketing">WhatsApp Marketing</option>
-                                        <option value="seo">SEO Services</option>
-                                        <option value="complete-package">Complete Digital Package</option>
+                                    <label for="interests">What interests you most?*</label>
+                                    <select class="form-select" name="interests[]" id="interests" aria-label="Service selection" value="<?php echo htmlspecialchars($interests); ?>" required>
+                                        <option value="Web Development" <?php echo (strpos($interests, 'Web Development') !== false) ? 'selected' : ''; ?>>Web Development</option>
+                                        <option value="Branding" <?php echo (strpos($interests, 'Branding') !== false) ? 'selected' : ''; ?>>Branding</option>
+                                        <option value="Marketing" <?php echo (strpos($interests, 'Marketing') !== false) ? 'selected' : ''; ?>>Marketing</option>
+                                        <option value="Logo Design" <?php echo (strpos($interests, 'Logo Design') !== false) ? 'selected' : ''; ?>>Logo Design</option>
+                                        <option value="Graphic Designing" <?php echo (strpos($interests, 'Graphic Designing') !== false) ? 'selected' : ''; ?>>Graphic Designing</option>
+                                        <option value="App Development" <?php echo (strpos($interests, 'App Development') !== false) ? 'selected' : ''; ?>>App Development</option>
+                                        <option value="WhatsApp Marketing" <?php echo (strpos($interests, 'WhatsApp Marketing') !== false) ? 'selected' : ''; ?>>WhatsApp Marketing</option>
+                                        <option value="SEO" <?php echo (strpos($interests, 'SEO') !== false) ? 'selected' : ''; ?>>SEO</option>
+                                        <option value="End-to-End Project Management" <?php echo (strpos($interests, 'End-to-End Project Management') !== false) ? 'selected' : ''; ?>>End-to-End Project Management</option>
                                     </select>
+                                    <span class="error-message"><?php echo $interests_err; ?></span>
                                 </div>
                                 <div class="input-half">
-                                    <label for="budget">Project Budget*</label>
-                                    <select class="form-select" aria-label="Budget selection">
-                                        <option selected>₹20,000 - ₹50,000</option>
-                                        <option value="budget-2">₹50,000 - ₹1,00,000</option>
-                                        <option value="budget-3">₹1,00,000 - ₹2,00,000</option>
-                                        <option value="budget-4">₹2,00,000+</option>
-                                        <option value="budget-custom">Let's discuss</option>
+                                    <label for="project_budget">Project Budget*</label>
+                                    <select class="form-select" name="project_budget" id="project_budget" aria-label="Budget selection" value="<?php echo htmlspecialchars($project_budget); ?>" required>
+                                        <option value="">Select a budget range</option>
+                                        <option value="₹20,000 - ₹50,000" <?php echo ($project_budget == '₹20,000 - ₹50,000') ? 'selected' : ''; ?>>₹20,000 - ₹50,000</option>
+                                        <option value="₹50,001 - ₹1,00,000" <?php echo ($project_budget == '₹50,001 - ₹1,00,000') ? 'selected' : ''; ?>>₹50,001 - ₹1,00,000</option>
+                                        <option value="₹1,00,001 - ₹2,00,000" <?php echo ($project_budget == '₹1,00,001 - ₹2,00,000') ? 'selected' : ''; ?>>₹1,00,001 - ₹2,00,000</option>
+                                        <option value="₹2,00,001+" <?php echo ($project_budget == '₹2,00,001+') ? 'selected' : ''; ?>>₹2,00,001+</option>
+                                        <option value="Custom Budget" <?php echo ($project_budget == 'Custom Budget') ? 'selected' : ''; ?>>Custom Budget</option>
                                     </select>
+                                    <span class="error-message"><?php echo $project_budget_err; ?></span>
                                 </div>
                             </div>
                             <div class="text-area mt--40">
-                                <label for="message">Tell us about your project*</label>
-                                <textarea id="message" cols="30" rows="10" placeholder="Describe your vision, goals, and any specific requirements. The more details you provide, the better we can tailor our proposal to your needs."></textarea>
+                                <label for="project_description">Tell us about your project*</label>
+                                <textarea id="project_description" name="project_description" cols="30" rows="10" placeholder="Describe your vision, goals, and any specific requirements. The more details you provide, the better we can tailor our proposal to your needs." value="<?php echo htmlspecialchars($project_description); ?>" required></textarea>
+                                <span class="error-message"><?php echo $project_description_err; ?></span>
                             </div>
-                            <button class="submit-pd">Send Project Inquiry</button>
+                            <button type="submit" class="submit-pd">Send Project Inquiry</button>
                         </form>
                     </div>
                     <!-- appoinment area two end -->
@@ -272,7 +412,7 @@
                             <!-- contact info -->
                             <div class="contact-information">
                                 <h5 class="title">Contact Info</h5>
-                                <a href="mailto:codevergelabs@gmail.com" class="mail">codevergelabs@gmail.com</a>
+                                <a href="mailto:contact@elevative.xyz" class="mail">contact@elevative.xyz</a>
                                 <a href="tel:+919830778548" class="number">+91 983 077 8548</a>
                                 <a href="#" class="map">India</a>
                             </div>
@@ -369,7 +509,7 @@
 
     <script defer src="assets/js/plugins/smoothscroll-varticle.js"></script>
     <script defer src="assets/js/vendor/gsap.js"></script>
-    <script defer src="assets/js/plugins/scrolltiger.js"></script>
+    <script defer src="assets/js/plugins/scrolltrigger.js"></script>
     <script defer src="assets/js/plugins/scrolltoplugin.js"></script>
     <script defer src="assets/js/plugins/splittext.js"></script>
     <script defer src="assets/js/plugins/smoothscroll.js"></script>
@@ -384,7 +524,7 @@
     <script defer src="assets/js/plugins/tilt.js"></script>
     <script defer src="assets/js/plugins/counterup.js"></script>
 
-    <script defer src="assets/js/vendor/waw.js"></script>
+    <script defer src="assets/js/vendor/wow.js"></script>
     <!-- custom javascripts -->
     <script defer src="assets/js/main.js"></script>
     <!-- Scripts style two End -->

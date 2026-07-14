@@ -46,7 +46,7 @@
                 if (data.responseText !== '') {
                     $(formMessages).text(data.responseText);
                 } else {
-                    $(formMessages).text('We apologize, but there was an issue sending your message. Please try again or contact us directly at codevergelabs@gmail.com');
+                    $(formMessages).text('We apologize, but there was an issue sending your message. Please try again or contact us directly at contact@elevative.xyz');
                 }
             });
     });

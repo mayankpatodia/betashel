@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <!-- Homepage -->
     <url>
@@ -41,6 +44,29 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Testimonials Page -->
+    <url>
+        <loc>https://elevative.xyz/testimonials.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Blog Details Pages -->
+    <url>
+        <loc>https://elevative.xyz/blog-details-first.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://elevative.xyz/blog-details-second.html</loc>
+        <lastmod>2025-01-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
     <!-- Legal Pages -->
     <url>
         <loc>https://elevative.xyz/privacy-policy.html</loc>
@@ -56,37 +82,37 @@
         <priority>0.5</priority>
     </url>
 
-    <!-- Error Pages -->
+    <!-- Error Pages (typically not indexed, but included for completeness) -->
     <url>
-        <loc>https://elevative.xyz/400.html</loc>
+        <loc>https://elevative.xyz/errors/400.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
     </url>
 
     <url>
-        <loc>https://elevative.xyz/403.html</loc>
+        <loc>https://elevative.xyz/errors/403.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
     </url>
 
     <url>
-        <loc>https://elevative.xyz/404.html</loc>
+        <loc>https://elevative.xyz/errors/404.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
     </url>
 
     <url>
-        <loc>https://elevative.xyz/500.html</loc>
+        <loc>https://elevative.xyz/errors/500.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>
     </url>
 
     <url>
-        <loc>https://elevative.xyz/503.html</loc>
+        <loc>https://elevative.xyz/errors/503.html</loc>
         <lastmod>2025-01-27</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.1</priority>

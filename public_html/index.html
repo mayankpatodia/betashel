@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1">
+    
+    <!-- SEO Meta Tags -->
+    <title>Elevative - Digital Growth Agency | Web Development, Branding & Marketing Services</title>
+    <meta name="description" content="Elevative transforms your vision into powerful digital experiences. We offer end-to-end web development, app development, branding, and WhatsApp marketing services to accelerate your business growth.">
+    <meta name="keywords" content="digital agency, web development, app development, branding services, WhatsApp marketing, SEO services, custom websites, Indian digital agency">
+    <meta name="author" content="Elevative - Code Verge Labs">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="IN">
+    <meta name="geo.placename" content="India">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Elevative - Digital Growth Agency | Your Ambition, Engineered">
+    <meta property="og:description" content="A complete suite of digital services—from branding to development and marketing—designed to fuel your growth. Transform your unique vision into a powerful online presence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elevative.xyz">
+    <meta property="og:image" content="https://elevative.xyz/assets/images/logo/logo-black.png">
+    <meta property="og:site_name" content="Elevative">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elevative - Digital Growth Agency | Your Ambition, Engineered">
+    <meta name="twitter:description" content="Transform your unique vision into a powerful online presence with our complete suite of digital services.">
+    <meta name="twitter:image" content="https://elevative.xyz/assets/images/logo/logo-black.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://elevative.xyz">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="assets/images/logo/logo-white.png" as="image">
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/icon-white.png">
+    <link rel="apple-touch-icon" href="assets/images/logo/icon-white.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Elevative",
+      "alternateName": "Code Verge Labs",
+      "url": "https://elevative.xyz",
+      "logo": "https://elevative.xyz/assets/images/logo/logo-black.png",
+      "description": "Digital growth agency specializing in web development, app development, branding, and marketing services",
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressLocality": "India"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-983-077-8548",
+        "contactType": "customer service",
+        "email": "contact@elevative.xyz",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.facebook.com/elevative",
+        "https://www.instagram.com/elevative",
+        "https://www.linkedin.com/company/elevative",
+        "https://wa.me/919830778548"
+      ],
+      "services": [
+        {
+          "@type": "Service",
+          "name": "Web Development",
+          "description": "Custom website development with responsive design and modern technologies"
+        },
+        {
+          "@type": "Service", 
+          "name": "App Development",
+          "description": "Mobile app development for iOS and Android platforms"
+        },
+        {
+          "@type": "Service",
+          "name": "Branding & Identity",
+          "description": "Complete brand identity design including logos, graphics, and brand strategies"
+        },
+        {
+          "@type": "Service",
+          "name": "WhatsApp Marketing",
+          "description": "Targeted WhatsApp marketing campaigns to boost engagement and sales"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Optimized CSS Loading -->
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Fallback for no-JS users -->
+    <noscript>
+        <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+        <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+        <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+        <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    </noscript>
+    
+    <!-- Custom Performance Optimizations & Lenis Scroll Enhancements -->
+    <style>
+        /* Critical CSS - Above the fold styles */
+        .header-area { 
+            background: #000; 
+            transition: all 0.3s ease;
+        }
+
+        /* Header scroll state for Lenis integration */
+        .header-area.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .banner-area { 
+            min-height: 100vh; 
+            background: #000; 
+        }
+
+        .title.rts_hero__title { 
+            font-size: 60px; 
+            line-height: 1.2; 
+            color: #fff; 
+        }
+        .hero__sub-title { 
+            color: #74787C; 
+            line-height: 1.6; 
+        }
+        
+        /* Override any conflicting scroll behaviors for Lenis */
+        html {
+            scroll-behavior: auto !important;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Custom branding enhancements */
+        .border-bottom-1 { 
+            position: relative;
+            border-bottom: 3px solid transparent;
+            background: linear-gradient(90deg, #000, #333) bottom/100% 3px no-repeat;
+        }
+        
+        /* Unique animations */
+        @keyframes elevativeGlow {
+            0% { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+            50% { box-shadow: 0 0 20px rgba(0,0,0,0.6); }
+            100% { box-shadow: 0 0 5px rgba(0,0,0,0.3); }
+        }
+        
+        .logo img:hover {
+            animation: elevativeGlow 2s ease-in-out infinite;
+        }
+        
+        /* Performance optimization */
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            will-change: transform;
+        }
+        
+        /* Reduce layout shift */
+        .banner-area { 
+            contain: layout style paint; 
+        }
+
+        /* Lenis scroll progress indicator enhancement */
+        .progress-wrap {
+            transition: all 0.3s ease;
+        }
+
+        .progress-wrap.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .title.rts_hero__title { 
+                font-size: 40px; 
+                line-height: 1.2;
+            }
+        }
+
+        /* ===========================
+           MARQUEE STRIP
+           =========================== */
+        .marquee-strip {
+            overflow: hidden;
+            background: #fff;
+            padding: 18px 0;
+            position: relative;
+            z-index: 10;
+        }
+        .marquee-strip.dark {
+            background: #141414;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: marqueeScroll 28s linear infinite;
+        }
+        .marquee-strip:hover .marquee-track {
+            animation-play-state: paused;
+        }
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0 36px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            color: #141414;
+        }
+        .marquee-strip.dark .marquee-item {
+            color: rgba(255,255,255,0.45);
+        }
+        .marquee-item .dot {
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        @keyframes marqueeScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ===========================
+           PORTFOLIO SECTION
+           =========================== */
+        .portfolio-area {
+            background: var(--color-primary);
+            position: relative;
+        }
+        .portfolio-section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 52px;
+        }
+        .portfolio-section-header .left .title {
+            font-size: 52px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.08;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .portfolio-section-header .left .disc {
+            color: var(--color-body);
+            margin-top: 16px;
+            max-width: 420px;
+        }
+        .portfolio-section-header .right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            --gap: 16px;
+        }
+        .portfolio-card {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #1a1a1a;
+            text-decoration: none !important;
+            height: 340px;
+            cursor: pointer;
+            will-change: transform;
+        }
+        /* Row 1 cards (Sirani + Ananta) — taller */
+        .portfolio-item:nth-child(1) .portfolio-card,
+        .portfolio-item:nth-child(2) .portfolio-card {
+            height: 420px;
+        }
+        .portfolio-thumbnail {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        .portfolio-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        filter 0.5s ease;
+            filter: brightness(0.75);
+        }
+        .portfolio-card:hover .portfolio-thumbnail img {
+            transform: scale(1.07);
+            filter: brightness(0.45);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.92) 0%,
+                rgba(0,0,0,0.55) 28%,
+                rgba(0,0,0,0.15) 55%,
+                transparent 75%
+            );
+            transition: background 0.4s ease;
+        }
+        .portfolio-card:hover .portfolio-overlay {
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.96) 0%,
+                rgba(0,0,0,0.7) 38%,
+                rgba(0,0,0,0.3) 65%,
+                transparent 85%
+            );
+        }
+        .portfolio-info {
+            width: 100%;
+            padding: 0 28px 24px;
+            /* Default: push tag above visible area; only title shows */
+            transform: translateY(0);
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .portfolio-card:hover .portfolio-info {
+            transform: translateY(0);
+        }
+
+        /* Tag — hidden by default, fades in on hover */
+        .portfolio-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.22);
+            padding: 4px 11px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            backdrop-filter: blur(6px);
+            background: rgba(255,255,255,0.06);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+        }
+        .portfolio-card:hover .portfolio-tag {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Title — always visible, bold at bottom */
+        .portfolio-title {
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            color: #fff !important;
+            margin-bottom: 4px !important;
+            line-height: 1.25 !important;
+        }
+        .portfolio-item.large .portfolio-title {
+            font-size: 24px !important;
+        }
+
+        /* URL — hidden by default */
+        .portfolio-url {
+            font-size: 12px;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 14px;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.28s ease 0.08s, transform 0.28s ease 0.08s;
+        }
+        .portfolio-card:hover .portfolio-url {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Button — hidden by default */
+        .portfolio-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.22);
+            padding: 8px 18px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease 0.12s,
+                        transform 0.3s ease 0.12s,
+                        background 0.25s ease;
+        }
+        .portfolio-card:hover .portfolio-link-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .portfolio-link-btn:hover {
+            background: rgba(255,255,255,0.22);
+        }
+
+        /* Portfolio scroll-in animation */
+        .portfolio-item {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===========================
+           DESIGN ENHANCEMENTS
+           =========================== */
+
+        /* Hero floating badge */
+        .hero-floating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50px;
+            padding: 8px 18px;
+            margin-bottom: 28px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            backdrop-filter: blur(10px);
+            animation: badgePulse 3s ease-in-out infinite;
+        }
+        .hero-floating-badge .badge-dot {
+            width: 7px;
+            height: 7px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #4ade80;
+            animation: dotBlink 1.8s ease-in-out infinite;
+        }
+        @keyframes badgePulse {
+            0%, 100% { border-color: rgba(255,255,255,0.12); }
+            50% { border-color: rgba(255,255,255,0.25); }
+        }
+        @keyframes dotBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Enhanced service item hover */
+        .single-item-service-one {
+            transition: border-color 0.3s ease;
+        }
+        .single-item-service-one:hover {
+            border-color: rgba(255,255,255,0.1) !important;
+        }
+
+        /* Counter area separator label */
+        .counter-eyebrow {
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 48px;
+            display: block;
+        }
+
+        /* Section separator line  */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent 100%);
+            margin: 0;
+        }
+
+        /* ===========================
+           COUNTER — LIGHT SECTION (contrasts with dark portfolio above)
+           =========================== */
+        .counter-light-section {
+            background: #f5f5f3;
+            position: relative;
+        }
+        .counter-light-section .counter-up-wrapper .counter-single .inner h2.title {
+            color: #141414;
+        }
+        .counter-light-section .counter-up-wrapper .counter-single p {
+            color: #74787C;
+        }
+        .counter-light-section .counter-up-wrapper .counter-single {
+            border-color: rgba(20,20,20,0.1) !important;
+        }
+
+        /* Responsive Portfolio */
+        @media only screen and (max-width: 991px) {
+            .portfolio-section-header .left .title {
+                font-size: 38px;
+            }
+            .portfolio-card,
+            .portfolio-item.large .portfolio-card {
+                height: 300px;
+            }
+        }
+        @media only screen and (max-width: 767px) {
+            .portfolio-card,
+            .portfolio-item.large .portfolio-card {
+                height: 260px;
+            }
+            .portfolio-section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body class="index-one">
+
+    <!-- header area start -->
+    <header class="header-area header-one header--sticky">
+        <div class="header-container-one">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo/logo-white.png" alt="logo">
+                </a>
+                <div class="header-right">
+
+                    <nav class="nav-area drop-down-rts">
+                        <ul class="navbar-nav-1">
+                            <li class="menu-item main-nav-on">
+                                <a href="index.html"><span class="rolling-text">Home</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="about.html"><span class="rolling-text">About</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="services.html"><span class="rolling-text">Services</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="pricing.html"><span class="rolling-text">Pricing</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="portfolio.html"><span class="rolling-text">Portfolio</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="contact.php"><span class="rolling-text">Contact</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="action-area">
+                        <div class="menu-btn">
+
+                            <div class="rts-offcanvas-wrapper">
+                                <div class="container-menu">
+                                    <div class="action-menu">
+                                        <div class="close-event"></div>
+                                        <div class="open-event">
+                                            <!-- <div class="text">
+                        <span>Menu</span>
+                        <span>Close</span>
+                    </div> -->
+                                            <div class="burger">
+                                                <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-close" data-v-649bbaab="">
+                                                    <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" stroke="currentColor" stroke-width="1.2"></line>
+                                                    <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675" stroke="currentColor" stroke-width="1.2"></line>
+                                                </svg>
+                                                <svg viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-burger" data-v-649bbaab="">
+                                                    <line x1="18" y1="0.6" y2="0.6" stroke="currentColor" stroke-width="1.2" data-v-649bbaab=""></line>
+                                                    <line x1="18" y1="5.7167" y2="5.7167" stroke="currentColor" stroke-width="1.2" data-v-649bbaab=""></line>
+                                                    <line x1="18" y1="10.8334" y2="10.8334" stroke="currentColor" stroke-width="1.2" data-v-649bbaab=""></line>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rts-fs-menu">
+                                    <div class="rts-fs-container row">
+
+                                        <div class="rts-fs--nav col-12 col-md-6">
+                                            <ul id="primary-menu" class="navbar-nav-button">
+                                                <li id="menu-item-76" class="menu-item">
+                                                    <a href="index.html">Home</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="services.html">Services</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="pricing.html">Pricing</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="portfolio.html">Portfolio</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="contact.php">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="rts-fs--contacts col-12 col-md-6">
+                                            <div class="contact-inner">
+                                                <div class="contact-information">
+                                                    <h2 class="heading-title">Get In Touch</h2>
+                                                    <div class="contact">
+                                                        <ul>
+                                                            <li><a href="mailto:contact@elevative.xyz" class="mail">contact@elevative.xyz</a></li>
+                                                            <li><a href="tel:+919830778548" class="number">+91 983 077 8548</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="rts-social-area-one">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                                            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+    <!-- rts banenr area start -->
+            <div class="banner-area banner-style-one banner-bg-1 hero__area-3 banner__jump" id="home">
+                <div class="shape-image">
+                    <img src="assets/images/banner/06.png" alt="banner">
+                </div>
+                <div class="container">
+                    <div class="row  ptb--200 ptb_sm--150">
+                        <div class="col-lg-9">
+                            <div class="banner-one-wrapper mt--80 mt_sm--0">
+                                <div class="hero-floating-badge">
+                                    <span class="badge-dot"></span>
+                                    Now Accepting New Projects
+                                </div>
+                                <h1 class="title rts_hero__title">
+                                    Your <span class="border-bottom-1">Ambition</span>,<br> Engineered.
+                                    <!-- Scale Your <br>Brand. <br> Your Market. -->
+                                </h1>
+                                <div class="para-wraph">
+                                    <p class="disc hero__sub-title">
+                                        A complete suite of digital services—from branding to development and <br>
+                                        marketing—designed to fuel your growth. We transform your unique vision into a <br>
+                                        powerful online presence that connects with customers and accelerates growth.
+                                    </p>
+                                </div>
+                                <div class="bannerJump_animation banner-jump-button rts-scroll-down-circle-wrapper-4">
+                                    <div class="jump__anim rts_round_btn_wrap scroll-down-circle-4">
+                                        <div class="rts-mouse-move-button">
+                                            <div class="btn_wrapper">
+                                                <a href="#services" class="rts-btn-mouse-move btn-hover btn-item"><span></span> Explore
+                                                    Our <br>
+                                                    Services
+                                                    <i class="fa-solid fa-arrow-up-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-4">
+                            <div class="vedio-button-area-banner-one">
+                                <img src="assets/images/banner/05.png" alt="">
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- rts banenr area end -->
+
+            <!-- marquee strip -->
+            <div class="marquee-strip">
+                <div class="marquee-track">
+                    <span class="marquee-item">Web Design <span class="dot"></span></span>
+                    <span class="marquee-item">App Development <span class="dot"></span></span>
+                    <span class="marquee-item">Branding &amp; Identity <span class="dot"></span></span>
+                    <span class="marquee-item">WhatsApp Marketing <span class="dot"></span></span>
+                    <span class="marquee-item">UI / UX Design <span class="dot"></span></span>
+                    <span class="marquee-item">SEO &amp; Growth <span class="dot"></span></span>
+                    <span class="marquee-item">E-commerce Solutions <span class="dot"></span></span>
+                    <span class="marquee-item">Digital Strategy <span class="dot"></span></span>
+                    <span class="marquee-item">Web Design <span class="dot"></span></span>
+                    <span class="marquee-item">App Development <span class="dot"></span></span>
+                    <span class="marquee-item">Branding &amp; Identity <span class="dot"></span></span>
+                    <span class="marquee-item">WhatsApp Marketing <span class="dot"></span></span>
+                    <span class="marquee-item">UI / UX Design <span class="dot"></span></span>
+                    <span class="marquee-item">SEO &amp; Growth <span class="dot"></span></span>
+                    <span class="marquee-item">E-commerce Solutions <span class="dot"></span></span>
+                    <span class="marquee-item">Digital Strategy <span class="dot"></span></span>
+                </div>
+            </div>
+            <!-- marquee strip end -->
+
+            <!-- rts service style one area start -->
+            <div class="rts-section-gap rts-service-area" id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title-area">
+                                <span class="sub-title">Our SERVICES</span>
+                            </div>
+                            <div class="title-top-service-varticle">
+                                <h2 class="title">Your Growth <br>
+                                    Toolkit</h2>
+                                <p class="dsic">
+                                    From branding and web development to targeted <br> 
+                                    marketing, we provide every service you<br>
+                                    need to scale your brand online.
+                                </p>
+                                <a href="services.html" class="learn-more-btn">Learn More<i
+                                        class="fa-solid fa-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="service-area-one-main-wrapper">
+
+                                <div class="single-item-service-one">
+                                    <a>
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/product/webdesign.jpg" alt="Professional Web Design Services">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Web design</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We design stunning, intuitive websites focused on creating a seamless 
+                                                user experience that captivates and engages your audience.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-item-service-one">
+                                    <a>
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/product/socialmarketing.jpg" alt="WhatsApp and Instagram Marketing Services">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Instagram & WhatsApp Marketing</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We run targeted Instagram and WhatsApp marketing campaigns that 
+                                                build community, drive engagement, and directly boost your sales.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-item-service-one">
+                                    <a>
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/product/webdevelopment.jpg" alt="Custom Web Development Solutions">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Web Development</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                Our developers build fast, secure, and scalable websites with clean 
+                                                code, ensuring flawless performance across all devices.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-item-service-one">
+                                    <a>
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/product/branding.jpg" alt="Brand Identity and Logo Design">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>Branding & identity</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We craft logos, graphics, and brand stories that resonate with 
+                                                your audience and create a powerful, lasting identity.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="single-item-service-one">
+                                    <a>
+                                        <div class="rts-img-contaciner">
+                                            <figure class="list-img">
+                                                <img class="list-img" src="assets/images/product/appdevelopment.jpg" alt="Mobile App Development Services">
+                                            </figure>
+                                        </div>
+                                        <div class="list-title col-md-6">
+                                            <h3>app development</h3>
+                                        </div>
+                                        <div class="list-info col-md-3">
+                                            <p class="disc">
+                                                We build intuitive, scalable, and high-performing mobile apps for 
+                                                iOS and Android to engage your audience on the go.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- rts service style one area end -->
+
+            <!-- our approch area start -->
+            <div class="our-approch-area-style-one rts-section-gap bg-dark-1" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="grid-lines-wrapper">
+                                <div class="grid-lines">
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 rts-slide-right-gsap">
+                            <!-- approach area left start -->
+                            <div class="approch-area-left">
+                                <div class="title-area-left-wrapper">
+                                    <span class="pre-title">Our Approach</span>
+                                    <h2 class="title quote">
+                                        Building Your Brand's Powerful Future.
+                                    </h2>
+                                </div>
+                                <p class="disc rts-text-anim">
+                                    Our philosophy is simple: we combine <br>
+                                    creative ingenuity with data-driven strategies with <br>
+                                    a simple, three-step process to ensure your brand's success.
+                                </p>
+                                <a href="about.html" class="learn-more-btn">Learn More <i
+                                        class="fa-solid fa-arrow-up-right"></i></a>
+                            </div>
+                            <!-- approach area left end -->
+                        </div>
+                        <div class="col-lg-6 col-md-6 rts-slide-left-gsap mt_sm--30">
+                            <!-- single approch area start -->
+                            <div class="single-approach-area-start">
+                                <div class="left-area">
+                                    <h3 class="title">Discovery</h3>
+                                    <p class="disc rts-text-anim">We begin by immersing ourselves in your brand, understanding
+                                        <br> your vision, and identifying your unique position in the market.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- single approch area end -->
+                            <!-- single approch area start -->
+                            <div class="single-approach-area-start two">
+                                <div class="left-area">
+                                    <h3 class="title">Strategy</h3>
+                                    <p class="disc rts-text-anim">Next, we craft a data-driven, bespoke strategy,
+                                        <br> creating a clear roadmap to achieve your business objectives.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- single approch area end -->
+                            <!-- single approch area start -->
+                            <div class="single-approach-area-start three mb--0">
+                                <div class="left-area">
+                                    <h3 class="title">Development</h3>
+                                    <p class="disc rts-text-anim">Finally, our team brings the strategy to life through
+                                        <br>creative design and robust development, delivering tangible results that fuel your growth.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- single approch area end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- our approch area end -->
+
+            <!-- rts pricing area start -->
+            <div class="rts-pricing-area rts-section-gap position-relative" id="pricing">
+                <div class="container-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="grid-lines-wrapper">
+                                <div class="grid-lines">
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <div class="pricing-left-area">
+                                <div class="title-area">
+                                    <span class="sub-title">Pricing</span>
+                                    <h2 class="title mt--30 quote">Affordable <br>
+                                        Pricing Plans to <br>
+                                        Meet Your Needs</h2>
+                                </div>
+                            </div>
+                            <div class="accordion-area-start-one">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item rts-slide-up-gsap">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                How much will my project cost?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Since every project is unique, we provide a detailed custom quote after a 
+                                                consultation to ensure you only pay for what your brand needs.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item rts-slide-up-gsap">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                How long will my project take to complete?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Timelines vary, but a standard website takes 4-8 weeks. We provide 
+                                                a detailed project timeline with clear milestones in every official proposal.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item rts-slide-up-gsap">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                What's the process after I choose a plan?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Our collaborative process involves Discovery, Strategy, and Development. 
+                                                We work with you at every step to ensure the final result aligns with your vision.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item rts-slide-up-gsap">
+                                        <h2 class="accordion-header" id="headingFour">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                Do you offer support after the project is launched?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                Yes, your launch is just the beginning. We offer ongoing support packages including 
+                                                maintenance, content updates, and marketing for your brand's continued growth.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-12 pl--100 pl_md--15 pl_sm--15 plr_md--20 plr_sm--20">
+                            <div class="pricing-tabs-homepage">
+                                <div class="tab-nav-homepage">
+                                    <button class="tab-btn-homepage active" onclick="openTabHomepage('project-based-home')">
+                                        <i class="fa-solid fa-code"></i> Project-Based
+                                    </button>
+                                    <button class="tab-btn-homepage" onclick="openTabHomepage('monthly-retainers-home')">
+                                        <i class="fa-solid fa-calendar-days"></i> Monthly Retainers
+                                    </button>
+                                    <button class="tab-btn-homepage" onclick="openTabHomepage('bundles-home')">
+                                        <i class="fa-solid fa-box"></i> Bundle Packages
+                                    </button>
+                                </div>
+
+                                <!-- Project-Based Tab -->
+                                <div id="project-based-home" class="tab-content-homepage active">
+                                    <div class="pricing-table-container-homepage">
+                                        <table class="pricing-table-homepage">
+                                            <thead>
+                                                <tr>
+                                                    <th>Service</th>
+                                                    <th>Package</th>
+                                                    <th>Price</th>
+                                                    <th>Key Features</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td rowspan="3"><strong>Website Development</strong></td>
+                                                    <td>Basic Business Site</td>
+                                                    <td><span class="price-tag-homepage">₹25,000</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li>5 pages, responsive design</li>
+                                                            <li>Basic SEO, contact form</li>
+                                                            <li>3 rounds of revisions</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Professional Website</td>
+                                                    <td><span class="price-tag-homepage">₹35,000</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li>10 pages, CMS integration</li>
+                                                            <li>Advanced SEO, blog setup</li>
+                                                            <li>Analytics integration</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-commerce Solution</td>
+                                                    <td><span class="price-tag-homepage">₹50,000</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li>Payment gateway, inventory</li>
+                                                            <li>Order tracking, security</li>
+                                                            <li>Admin dashboard</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td rowspan="2"><strong>App Development</strong></td>
+                                                    <td>Basic MVP App</td>
+                                                    <td><span class="price-tag-homepage">Starting from <br> ₹40,000</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li>Cross-platform development</li>
+                                                            <li>Core features, basic UI/UX</li>
+                                                            <li>App store submission</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Feature-Rich App</td>
+                                                    <td><span class="price-tag-homepage">Starting from <br> ₹70,000</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li>Advanced features, custom UI</li>
+                                                            <li>Backend API, push notifications</li>
+                                                            <li>Analytics integration</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Monthly Retainers Tab -->
+                                <div id="monthly-retainers-home" class="tab-content-homepage">
+                                    <div class="pricing-table-container-homepage">
+                                        <table class="pricing-table-homepage">
+                                            <thead>
+                                                <tr>
+                                                    <th>Service</th>
+                                                    <th>Basic Plan</th>
+                                                    <th>Advanced Plan</th>
+                                                    <th>Key Differences</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>SEO Services</strong></td>
+                                                    <td><span class="price-tag-homepage">₹10,000/month</span></td>
+                                                    <td><span class="price-tag-homepage">₹20,000/month</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li><strong>Basic:</strong> Keyword research, on-page SEO</li>
+                                                            <li><strong>Advanced:</strong> Link building, competitor analysis</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>WhatsApp Marketing</strong></td>
+                                                    <td><span class="price-tag-homepage">₹10,000/month</span></td>
+                                                    <td><span class="price-tag-homepage">₹20,000/month</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li><strong>Basic:</strong> 1K messages, basic automation</li>
+                                                            <li><strong>Advanced:</strong> 5K messages, A/B testing</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Website Maintenance</strong></td>
+                                                    <td><span class="price-tag-homepage">₹10,000/month</span></td>
+                                                    <td><span class="price-tag-homepage">₹20,000/month</span></td>
+                                                    <td>
+                                                        <ul class="features-list-homepage">
+                                                            <li><strong>Basic:</strong> Security updates, backups</li>
+                                                            <li><strong>Advanced:</strong> Priority fixes, content updates</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <!-- Bundle Packages Tab -->
+                                <div id="bundles-home" class="tab-content-homepage">
+                                    <div class="bundle-cards-homepage">
+                                        <div class="bundle-card-homepage">
+                                            <h4><i class="fa-solid fa-rocket"></i> Startup Launch</h4>
+                                            <div class="price-homepage">From ₹50,000</div>
+                                            <ul>
+                                                <li>✓ Logo & Brand Identity</li>
+                                                <li>✓ Professional Website</li>
+                                                <li>✓ Basic SEO Setup</li>
+                                                <li>✓ Social Media Setup</li>
+                                            </ul>
+                                            <a href="pricing.html" class="cta-btn-homepage">Get Started</a>
+                                        </div>
+                                        
+                                        <div class="bundle-card-homepage">
+                                            <h4><i class="fa-solid fa-store"></i> E-commerce Builder</h4>
+                                            <div class="price-homepage">From ₹70,000</div>
+                                            <ul>
+                                                <li>✓ E-commerce Website</li>
+                                                <li>✓ Payment Integration</li>
+                                                <li>✓ SEO & Marketing</li>
+                                                <li>✓ Order Management</li>
+                                            </ul>
+                                            <a href="pricing.html" class="cta-btn-homepage">Get Started</a>
+                                        </div>
+                                        
+                                        <div class="bundle-card-homepage">
+                                            <h4><i class="fa-solid fa-magic-wand-sparkles"></i> Brand Transformation</h4>
+                                            <div class="price-homepage">From ₹80,000</div>
+                                            <ul>
+                                                <li>✓ Complete Rebranding</li>
+                                                <li>✓ New Website Design</li>
+                                                <li>✓ Content Strategy</li>
+                                                <li>✓ Launch Campaign</li>
+                                            </ul>
+                                            <a href="pricing.html" class="cta-btn-homepage">Get Started</a>
+                                        </div>
+                                        
+                                        <div class="bundle-card-homepage">
+                                            <h4><i class="fa-solid fa-puzzle-piece"></i> Custom Solution</h4>
+                                            <div class="price-homepage">Custom Quote</div>
+                                            <ul>
+                                                <li>✓ Tailored Requirements</li>
+                                                <li>✓ Custom Technology</li>
+                                                <li>✓ System Integration</li>
+                                                <li>✓ Dedicated Support</li>
+                                            </ul>
+                                            <a href="pricing.html" class="cta-btn-homepage">Consult Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="btn--area-center">
+                                <a href="contact.php" class="learn-more-btn">Custom Quote
+                                    <i class="fa-solid fa-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- rts pricing area end -->
+
+            <!-- our trusted clienbts area start -->
+            
+            <!-- our trusted clienbts area end -->
+
+            <!-- portfolio area start -->
+            <div class="portfolio-area rts-section-gap" id="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="portfolio-section-header">
+                                <div class="left">
+                                    <span class="sub-title text-white">Our Work</span>
+                                    <h2 class="title quote">Crafted With <br\>Purpose &amp; Precision</h2>
+                                    <p class="disc">A curated selection of digital experiences built for real businesses — from startups to established brands.</p>
+                                </div>
+                                <div class="right">
+                                    <a href="portfolio.html" class="learn-more-btn">View All Work <i class="fa-solid fa-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 portfolio-grid">
+                        <!-- ROW 1: Ananta Woods (left) + Sirani Creations (right) -->
+                        <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item">
+                            <a href="https://anantawoods.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                                <div class="portfolio-thumbnail">
+                                    <img src="assets/images/portfolio/ananta-woods.jpg" alt="Ananta Woods website preview" loading="lazy" onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://anantawoods.vercel.app/?w=700&h=500'">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <span class="portfolio-tag">Travel</span>
+                                        <h3 class="portfolio-title">Ananta Woods</h3>
+                                        <p class="portfolio-url">anantawoods.vercel.app</p>
+                                        <span class="portfolio-link-btn">View Live <i class="fa-solid fa-arrow-up-right"></i></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item">
+                            <a href="https://www.siranicreations.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                                <div class="portfolio-thumbnail">
+                                    <img src="assets/images/portfolio/sirani-creations.jpg" alt="Sirani Creations website preview" loading="lazy" onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://www.siranicreations.com/?w=700&h=500'">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <span class="portfolio-tag">Branding</span>
+                                        <h3 class="portfolio-title">Sirani Creations</h3>
+                                        <p class="portfolio-url">siranicreations.com</p>
+                                        <span class="portfolio-link-btn">View Live <i class="fa-solid fa-arrow-up-right"></i></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- ROW 2: Vinayak Engineering + S9 Finellect + AALC -->
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item">
+                            <a href="https://vinayakengicom.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                                <div class="portfolio-thumbnail">
+                                    <img src="assets/images/portfolio/vinayak-engineering.jpg" alt="Vinayak Engineering website preview" loading="lazy" onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://vinayakengicom.com/?w=600&h=500'">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <span class="portfolio-tag">Industry</span>
+                                        <h3 class="portfolio-title">Vinayak Engineering</h3>
+                                        <p class="portfolio-url">vinayakengicom.com</p>
+                                        <span class="portfolio-link-btn">View Live <i class="fa-solid fa-arrow-up-right"></i></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item">
+                            <a href="https://s9finellect.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                                <div class="portfolio-thumbnail">
+                                    <img src="assets/images/portfolio/s9-finellect.jpg" alt="S9 Finellect website preview" loading="lazy" onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://s9finellect.com/?w=600&h=500'">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <span class="portfolio-tag">Finance</span>
+                                        <h3 class="portfolio-title">S9 Finellect</h3>
+                                        <p class="portfolio-url">s9finellect.com</p>
+                                        <span class="portfolio-link-btn">View Live <i class="fa-solid fa-arrow-up-right"></i></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item">
+                            <a href="https://aalc.co.in/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                                <div class="portfolio-thumbnail">
+                                    <img src="assets/images/portfolio/aalc.jpg" alt="AALC website preview" loading="lazy" onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://aalc.co.in/?w=600&h=500'">
+                                </div>
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-info">
+                                        <span class="portfolio-tag">Law</span>
+                                        <h3 class="portfolio-title">AALC</h3>
+                                        <p class="portfolio-url">aalc.co.in</p>
+                                        <span class="portfolio-link-btn">View Live <i class="fa-solid fa-arrow-up-right"></i></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- portfolio area end -->
+
+            <!-- counter aarea -->
+            <div class="counter-area-elements rts-section-gapBottom rts-section-gapTop rts_jump_counter__animation counter-light-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- cunter up main wrapper -->
+                            <div class="counter-up-wrapper counter_animation">
+                                <div class="counter-single counter__anim">
+                                    <div class="inner">
+                                        <h2 class="title"><span class="counter">362</span></h2>
+                                        <p>Projects <br>
+                                            Completed</p>
+                                    </div>
+                                </div>
+                                <div class="counter-single counter__anim">
+                                    <div class="inner">
+                                        <h2 class="title"><span class="counter">30</span></h2>
+                                        <p>Happy <br>
+                                            Customers</p>
+                                    </div>
+                                </div>
+                                <div class="counter-single counter__anim">
+                                    <div class="inner">
+                                        <h2 class="title"><span class="counter">4</span>+</h2>
+                                        <p>Years <br>
+                                            Experience</p>
+                                    </div>
+                                </div>
+                                <div class="counter-single counter__anim">
+                                    <div class="inner">
+                                        <h2 class="title"><span class="counter">13</span></h2>
+                                        <p>Awards <br>
+                                            Achievement</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- cunter up main wrapper end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- conter area end -->                    
+            
+            <!-- blog area start -->
+            <!-- <div class="blog-area-start rts-section-gap bg-dark-1" id="blog">
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="blog-left-wrapper-area-one">
+                                <div class="content-wrapper">
+                                    <span class="sub-title">Update Blog</span>
+                                    <h2 class="title quote">
+                                        READ UPDATED <br>
+                                        JOURNAL
+                                    </h2>
+                                    <p class="disc rts-text-anim">
+                                        Irna torquent accumsan aliquet a metus netus tellus <br> egestas, eu semper
+                                        tortor fusce duis massa morbi <br> parturient ornare.
+                                    </p>
+                                    <a href="blog.html" class="learn-more-btn">VIEW BLOG <i
+                                            class="fa-solid fa-arrow-up-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 col-12 rts-slide-left-gsap">
+                            <div class="blog-single-main-wrapper style-one">
+                                <a href="blog-details.html" class="thumbnail">
+                                    <div class="imgae-box">
+                                        <img src="assets/images/blog/blog-first.png" alt="blog">
+                                    </div>
+                                </a>
+                                <div class="inner">
+                                    <div class="head">
+                                        <span class="date">March 25, 2023</span>
+                                        <span class="time">8 min read</span>
+                                    </div>
+                                    <div class="body">
+                                        <a href="blog-details-first.html">
+                                            <h4 class="title">Brand Psychology: What Do Your <br>Colors Say About You?</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- blog area end -->
+
+            <!-- rts-footer-area one -->
+            <div class="rts-footer-area-one rts-section-gapTop" id="contact">
+                <div class="container">
+                    <div class="row rts-section-gapBottom">
+                        <div class="col-lg-12">
+                            <div class="footer-main-wrapper-one">
+                                <!-- footer left area start -->
+                                <div class="footer-left-area">
+                                    <a href="index.html" class="logo-footer">
+                                        <img class="logo-1" src="assets/images/logo/logo-white.png" alt="lolo-area">
+                                    </a>
+                                    <p class="disc">
+                                        For your daily dose of branding inspiration, <br>
+                                        follow our journey here.
+                                    </p>
+                                    <div class="rts-social-area-one">
+                                        <ul>
+                                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- footer left area end -->
+                                <!-- footer single wized start -->
+                                <div class="footer-single-wized-start">
+                                    <h5 class="title">Pages</h5>
+                                    <ul class="footer-nav">
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="pricing.html">Pricing</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="contact.php">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                <!-- footer single wized end -->
+                                <!-- footer single wized start -->
+                                <div class="footer-single-wized-start">
+                                    <h5 class="title">Legal</h5>
+                                    <ul class="footer-nav">
+                                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                                    </ul>
+                                </div>
+                                <!-- footer single wized end -->
+                                <!-- footer single wized start -->
+                                <div class="footer-single-wized-start">
+                                    <h5 class="title">Contact Info</h5>
+                                    <div class="mail-contact-area">
+                                        <div class="single-con-info mail mb--10">
+                                            <a href="mailto:contact@elevative.xyz">
+                                                contact@elevative.xyz
+                                            </a>
+                                        </div>
+                                        <div class="single-con-info mb--10">
+                                            <a href="tel:+919830778548">
+                                                +91 983 077 8548
+                                            </a>
+                                        </div>
+                                        <div class="single-con-info mb--10">
+                                            India
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer single wized end -->
+                                <!-- footer single wized start -->
+                                <div class="footer-single-wized-start">
+                                    <h5 class="title">Subscribe Us</h5>
+                                    <div class="subscribtion-area">
+                                        <p class="disc">
+                                            Subscribe our newsletter for future updates. <br> don't worry we don't spam
+                                            your email address
+                                        </p>
+                                        <form action="#" class="subscribtion-input">
+                                            <input id="email" type="email" placeholder="Enter your email..." required>
+                                            <label for="email"><i class="fa-regular fa-envelope"></i></label>
+                                            <button type="submit" class="rts-btn btn-dark">subscribe</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- footer single wized end -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright-area text-center">
+                                <div class="left">
+                                    <p>2025 © Code Verge Labs. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- rts-footer-area one end -->
+        </div>
+    </div>
+    <!-- rts-footer-area one end -->
+
+    <!-- Scripts style two -->
+    <div class="loading-screen" id="loading-screen">
+        <span class="bar top-bar"></span>
+        <span class="bar down-bar"></span>
+        <span class="progress-line"></span>
+        <span class="loading-counter"> </span>
+    </div>
+
+
+    <div class="bg-noise"></div>
+
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+    <!-- back to top end -->
+
+
+
+    <!-- pre loader start -->
+    <div class="rts-cursor cursor-outer" data-default="yes" data-link="yes" data-slider="no">
+        <span class="fn-cursor"></span>
+    </div>
+    <div class="rts-cursor cursor-inner" data-default="yes" data-link="yes" data-slider="no">
+        <span class="fn-cursor">
+        <span class="fn-left"></span>
+        <span class="fn-right"></span>
+        </span>
+    </div>
+    <!-- pre loader end -->
+
+
+
+    <!-- dark light switcher start-->
+    <div class="modal-sidebar-scroll rts-dark-light">
+        <ul>
+            <li class="go-dark-w"><span>Dark</span><i class="rts-go-dark fal fa-moon"></i></li>
+            <li class="go-light-w"><span>Light</span><i class="rts-go-light fa-light fa-brightness"></i></li>
+        </ul>
+    </div>
+    <!-- dark light switcher end -->
+
+
+
+    <script defer src="assets/js/vendor/jquery.min.js"></script>
+    <script defer src="assets/js/plugins/bootstrap.min.js"></script>
+    <script defer src="assets/js/plugins/contact.form.js"></script>
+    <script defer src="assets/js/vendor/waypoint.js"></script>
+    <script defer src="assets/js/plugins/swiper.js"></script>
+
+    <!-- for side bar sticky -->
+    <script defer src="assets/js/plugins/resizer-sensor.js"></script>
+    <script defer src="assets/js/plugins/sticky-sidebar.js"></script>
+    <!-- for side bar sticky end-->
+
+    <script defer src="assets/js/plugins/isotop.js"></script>
+    <script defer src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+
+    <!-- GSAP (required for Lenis integration) -->
+    <script defer src="assets/js/vendor/gsap.js"></script>
+    
+    <!-- Lenis Integration Patch (must load RIGHT AFTER GSAP) -->
+    <script defer src="assets/js/lenis-patch.js"></script>
+    
+    <!-- ScrollTrigger and other GSAP plugins -->
+    <script defer src="assets/js/plugins/scrolltrigger.js"></script>
+    <script defer src="assets/js/plugins/scrolltoplugin.js"></script>
+    <script defer src="assets/js/plugins/splittext.js"></script>
+    
+    <!-- Lenis Smooth Scrolling CDN -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- Modern Scroll Experience (replaces old smooth scroll libraries) -->
+    <script defer src="assets/js/lenis-scroll.js"></script>
+
+    <!-- title opacity scroll magix -->
+    <script defer src="assets/js/plugins/scrollmagic.js"></script>
+    <script defer src="assets/js/plugins/animate-scrollmagic.js"></script>
+    <!-- title opacity scroll magic end -->
+
+    <script defer src="assets/js/plugins/tilt.js"></script>
+    <script defer src="assets/js/plugins/counterup.js"></script>
+
+    <script defer src="assets/js/vendor/wow.js"></script>
+    <!-- custom javascripts (modified to work with Lenis) -->
+    <script defer src="assets/js/main.js"></script>
+    
+    <!-- Debug helper (temporary - remove in production) -->
+    <script defer src="assets/js/lenis-debug.js"></script>
+    <!-- Scripts style two End -->
+
+    <!-- Homepage Tab Functionality -->
+    <script>
+        function openTabHomepage(tabName) {
+            // Hide all tab contents
+            var tabContents = document.getElementsByClassName('tab-content-homepage');
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Remove active class from all tab buttons
+            var tabButtons = document.getElementsByClassName('tab-btn-homepage');
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show selected tab and mark button as active
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+
+
+</body>
+
+</html>

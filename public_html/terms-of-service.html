@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1">
+    
+    <!-- SEO Meta Tags -->
+    <title>Terms of Service - Elevative | Service Agreement & User Terms</title>
+    <meta name="description" content="Elevative's Terms of Service outline the rules and regulations for using our digital services. Read our service agreement and user terms.">
+    <meta name="keywords" content="terms of service, service agreement, user terms, digital services, web development terms">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Terms of Service - Elevative">
+    <meta property="og:description" content="Read Elevative's Terms of Service to understand the rules and regulations for using our digital services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elevative.xyz/terms-of-service.html">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://elevative.xyz/terms-of-service.html">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/icon-white.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Custom Legal Page Styles -->
+    <style>
+        .legal-page-area {
+            background: #000;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .legal-page-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.02) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.01) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .legal-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+        
+        .legal-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .legal-hero h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .legal-hero .subtitle {
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 0;
+        }
+        
+        .legal-content-area {
+            padding: 80px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .legal-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .legal-nav {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .legal-nav h3 {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 8px;
+        }
+        
+        .legal-nav-list li {
+            margin: 0;
+        }
+        
+        .legal-nav-list a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .legal-nav-list a:hover {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .legal-section {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .legal-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(45deg, #333, #666);
+        }
+        
+        .legal-section h2 {
+            color: #fff;
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+        
+        .legal-section h3 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 24px 0 12px;
+        }
+        
+        .legal-section p {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .legal-section ul {
+            margin-bottom: 20px;
+            padding-left: 0;
+            list-style-type: none;
+        }
+        
+        .legal-section li {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .legal-section li::before {
+            content: '•';
+            color: #666;
+            font-weight: bold;
+            position: absolute;
+            left: 8px;
+        }
+        
+        .legal-section a {
+            color: #fff;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .legal-section a:hover {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        .contact-info {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+        
+        .contact-info strong {
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .legal-footer-cta {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+        
+        .legal-footer-cta h3 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .legal-footer-cta p {
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .legal-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #333, #000);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 2px solid #444;
+        }
+        
+        .legal-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-color: #666;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .legal-hero {
+                padding: 100px 0 40px;
+            }
+            
+            .legal-content-area {
+                padding: 40px 0;
+            }
+            
+            .legal-section {
+                padding: 24px 20px;
+            }
+            
+            .legal-nav-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .legal-footer-cta {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="legal-page">
+
+    <!-- header area start -->
+    <header class="header-area header-one header--sticky">
+        <div class="header-container-one">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo/logo-white.png" alt="Elevative Logo">
+                </a>
+                <div class="header-right">
+                    <nav class="nav-area drop-down-rts">
+                        <ul class="navbar-nav-1">
+                            <li class="menu-item main-nav-on">
+                                <a href="index.html"><span class="rolling-text">Home</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="about.html"><span class="rolling-text">About</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="services.html"><span class="rolling-text">Services</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="pricing.html"><span class="rolling-text">Pricing</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="portfolio.html"><span class="rolling-text">Portfolio</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="contact.php"><span class="rolling-text">Contact</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+    <div class="legal-page-area">
+        <!-- Hero Section -->
+        <div class="legal-hero">
+            <div class="container">
+                <div class="legal-hero-content">
+                    <h1>Terms of Service</h1>
+                    <p class="subtitle">Last updated: January 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="legal-content-area">
+            <div class="container">
+                <div class="legal-content">
+                    
+                    <!-- Quick Navigation -->
+                    <div class="legal-nav">
+                        <h3><i class="fa-solid fa-list"></i> Quick Navigation</h3>
+                        <ul class="legal-nav-list">
+                            <li><a href="#acceptance">1. Acceptance of Terms</a></li>
+                            <li><a href="#services">2. Description of Services</a></li>
+                            <li><a href="#user-responsibilities">3. User Responsibilities</a></li>
+                            <li><a href="#service-agreement">4. Service Agreement</a></li>
+                            <li><a href="#payment-terms">5. Payment Terms</a></li>
+                            <li><a href="#intellectual-property">6. Intellectual Property</a></li>
+                            <li><a href="#warranties">7. Warranties & Disclaimers</a></li>
+                            <li><a href="#limitation-liability">8. Limitation of Liability</a></li>
+                            <li><a href="#termination">9. Termination</a></li>
+                            <li><a href="#governing-law">10. Governing Law</a></li>
+                            <li><a href="#contact">11. Contact Information</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Acceptance of Terms -->
+                    <div class="legal-section" id="acceptance">
+                        <h2>1. Acceptance of Terms</h2>
+                        <p>Welcome to Elevative (operated by Code Verge Labs). These Terms of Service ("Terms") govern your use of our website located at <a href="https://elevative.xyz">elevative.xyz</a> and the services provided by Elevative.</p>
+                        <p>By accessing our website or using our services, you agree to be bound by these Terms. If you do not agree to all the terms and conditions, then you may not access the website or use any services.</p>
+                    </div>
+
+                    <!-- Description of Services -->
+                    <div class="legal-section" id="services">
+                        <h2>2. Description of Services</h2>
+                        <p>Elevative provides digital services including but not limited to:</p>
+                        <ul>
+                            <li>Web development and design</li>
+                            <li>Mobile application development</li>
+                            <li>Brand identity and logo design</li>
+                            <li>WhatsApp and social media marketing</li>
+                            <li>SEO and digital marketing services</li>
+                            <li>Consultation and strategy services</li>
+                        </ul>
+                        <p>We reserve the right to modify, suspend, or discontinue any aspect of our services at any time.</p>
+                    </div>
+
+                    <!-- User Responsibilities -->
+                    <div class="legal-section" id="user-responsibilities">
+                        <h2>3. User Responsibilities</h2>
+                        
+                        <h3>3.1 Account Security</h3>
+                        <p>You are responsible for maintaining the confidentiality of any account information and passwords associated with our services.</p>
+
+                        <h3>3.2 Prohibited Uses</h3>
+                        <p>You agree not to use our services:</p>
+                        <ul>
+                            <li>For any unlawful purpose or to solicit others to perform unlawful acts</li>
+                            <li>To violate any international, federal, provincial, or state regulations, rules, laws, or local ordinances</li>
+                            <li>To infringe upon or violate our intellectual property rights or the intellectual property rights of others</li>
+                            <li>To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate</li>
+                            <li>To submit false or misleading information</li>
+                            <li>To upload or transmit viruses or any other type of malicious code</li>
+                        </ul>
+
+                        <h3>3.3 Content Guidelines</h3>
+                        <p>When providing content for our services, you must ensure that:</p>
+                        <ul>
+                            <li>You own all rights to the content or have proper authorization</li>
+                            <li>The content does not violate any laws or third-party rights</li>
+                            <li>The content is accurate and not misleading</li>
+                            <li>The content is appropriate and professional</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service Agreement -->
+                    <div class="legal-section" id="service-agreement">
+                        <h2>4. Service Agreement and Project Terms</h2>
+                        
+                        <h3>4.1 Project Scope</h3>
+                        <p>Each project will be defined by a detailed scope of work that includes deliverables, timelines, and specifications. Changes to the project scope may result in additional costs and timeline adjustments.</p>
+
+                        <h3>4.2 Client Cooperation</h3>
+                        <p>Successful project completion requires your cooperation, including:</p>
+                        <ul>
+                            <li>Providing necessary materials and information in a timely manner</li>
+                            <li>Responding to requests for feedback within agreed timeframes</li>
+                            <li>Providing access to necessary systems and platforms</li>
+                            <li>Reviewing and approving deliverables as specified</li>
+                        </ul>
+
+                        <h3>4.3 Revisions and Changes</h3>
+                        <p>Each project includes a specified number of revision rounds. Additional revisions beyond the agreed scope may incur extra charges.</p>
+                    </div>
+
+                    <!-- Payment Terms -->
+                    <div class="legal-section" id="payment-terms">
+                        <h2>5. Payment Terms</h2>
+                        
+                        <h3>5.1 Pricing and Quotes</h3>
+                        <p>All prices are quoted in Indian Rupees (INR) unless otherwise specified. Custom quotes are valid for 30 days from the date of issue.</p>
+
+                        <h3>5.2 Payment Schedule</h3>
+                        <p>Payment terms will be specified in each project agreement. Typically:</p>
+                        <ul>
+                            <li>50% advance payment before project commencement</li>
+                            <li>50% final payment upon project completion</li>
+                            <li>Monthly retainer services are billed in advance</li>
+                        </ul>
+
+                        <h3>5.3 Late Payments</h3>
+                        <p>Late payments may result in project suspension and may incur additional fees. We reserve the right to charge interest on overdue amounts.</p>
+
+                        <h3>5.4 Refund Policy</h3>
+                        <p>Refunds are considered on a case-by-case basis. Once work has commenced, refunds will be prorated based on work completed.</p>
+                    </div>
+
+                    <!-- Intellectual Property -->
+                    <div class="legal-section" id="intellectual-property">
+                        <h2>6. Intellectual Property Rights</h2>
+                        
+                        <h3>6.1 Client Content</h3>
+                        <p>You retain ownership of all content you provide to us. By providing content, you grant us a license to use it for the purpose of delivering our services.</p>
+
+                        <h3>6.2 Our Work Product</h3>
+                        <p>Upon full payment, you will own the custom work product created specifically for your project. However, we retain rights to:</p>
+                        <ul>
+                            <li>Our general methodologies and know-how</li>
+                            <li>Reusable code components and frameworks</li>
+                            <li>The right to display the work in our portfolio</li>
+                        </ul>
+
+                        <h3>6.3 Third-Party Components</h3>
+                        <p>Some projects may include third-party components, plugins, or templates that are subject to their own licensing terms.</p>
+                    </div>
+
+                    <!-- Warranties -->
+                    <div class="legal-section" id="warranties">
+                        <h2>7. Warranties and Disclaimers</h2>
+                        
+                        <h3>7.1 Service Warranty</h3>
+                        <p>We warrant that our services will be performed with reasonable skill and care. We provide a 30-day warranty on delivered work for technical issues.</p>
+
+                        <h3>7.2 Disclaimer</h3>
+                        <p>Our services are provided "as is" and "as available." We make no representations or warranties of any kind, express or implied, regarding:</p>
+                        <ul>
+                            <li>The accuracy or completeness of information</li>
+                            <li>Uninterrupted or error-free service</li>
+                            <li>The results that may be obtained from use of our services</li>
+                            <li>Third-party websites or services</li>
+                        </ul>
+                    </div>
+
+                    <!-- Limitation of Liability -->
+                    <div class="legal-section" id="limitation-liability">
+                        <h2>8. Limitation of Liability</h2>
+                        <p>To the fullest extent permitted by applicable law, Elevative shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.</p>
+                        <p>Our total liability for any claim shall not exceed the amount paid by you for the specific services giving rise to the claim.</p>
+                    </div>
+
+                    <!-- Termination -->
+                    <div class="legal-section" id="termination">
+                        <h2>9. Termination</h2>
+                        
+                        <h3>9.1 Termination by Either Party</h3>
+                        <p>Either party may terminate ongoing services with 30 days written notice. Project-based work cannot be terminated once commenced without mutual agreement.</p>
+
+                        <h3>9.2 Immediate Termination</h3>
+                        <p>We may terminate your access immediately if you:</p>
+                        <ul>
+                            <li>Violate these Terms</li>
+                            <li>Fail to make required payments</li>
+                            <li>Engage in illegal or harmful activities</li>
+                        </ul>
+
+                        <h3>9.3 Effect of Termination</h3>
+                        <p>Upon termination, you must pay for all services provided up to the termination date. We will provide you with work completed up to that point.</p>
+                    </div>
+
+                    <!-- Governing Law -->
+                    <div class="legal-section" id="governing-law">
+                        <h2>10. Governing Law and Disputes</h2>
+                        <p>These Terms shall be governed by and construed in accordance with the laws of India. Any legal action or proceeding arising under these Terms will be brought exclusively in the courts of India.</p>
+                        
+                        <h3>10.1 Dispute Resolution</h3>
+                        <p>We encourage resolving disputes through direct communication. If a dispute cannot be resolved informally, it may be submitted to mediation before pursuing legal action.</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="legal-section" id="contact">
+                        <h2>11. Contact Information</h2>
+                        <p>If you have any questions about these Terms of Service, please contact us:</p>
+                        
+                        <div class="contact-info">
+                            <p><strong>Elevative (Code Verge Labs)</strong></p>
+                            <p>Email: <a href="mailto:contact@elevative.xyz">contact@elevative.xyz</a></p>
+                            <p>Phone: <a href="tel:+919830778548">+91 983 077 8548</a></p>
+                            <p>Website: <a href="https://elevative.xyz">https://elevative.xyz</a></p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="legal-footer-cta">
+                        <h3>Ready to Work Together?</h3>
+                        <p>Now that you understand our terms, let's discuss your project and bring your vision to life.</p>
+                        <a href="contact.php" class="legal-cta-btn">
+                            <i class="fa-solid fa-rocket"></i>
+                            Start Your Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Area -->
+        <div class="rts-footer-area-one rts-section-gapTop">
+            <div class="container">
+                <div class="row rts-section-gapBottom">
+                    <div class="col-lg-12">
+                        <div class="footer-main-wrapper-one">
+                            <div class="footer-left-area">
+                                <a href="index.html" class="logo-footer">
+                                    <img class="logo-1" src="assets/images/logo/logo-white.png" alt="Elevative Logo">
+                                </a>
+                                <p class="disc">
+                                    For your daily dose of branding inspiration, <br>
+                                    follow our journey here.
+                                </p>
+                                <div class="rts-social-area-one">
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer-single-wized-start">
+                                <h5 class="title">Pages</h5>
+                                <ul class="footer-nav">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="pricing.html">Pricing</a></li>
+                                    <li><a href="contact.php">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-single-wized-start">
+                                <h5 class="title">Legal</h5>
+                                <ul class="footer-nav">
+                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-single-wized-start">
+                                <h5 class="title">Contact Info</h5>
+                                <div class="mail-contact-area">
+                                    <div class="single-con-info mail mb--10">
+                                        <a href="mailto:contact@elevative.xyz">
+                                            contact@elevative.xyz
+                                        </a>
+                                    </div>
+                                    <div class="single-con-info mb--10">
+                                        <a href="tel:+919830778548">
+                                            +91 983 077 8548
+                                        </a>
+                                    </div>
+                                    <div class="single-con-info mb--10">
+                                        India
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-area text-center">
+                            <div class="left">
+                                <p>2025 © Code Verge Labs. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script src="assets/js/vendor/gsap.js"></script>
+    <script src="assets/js/vendor/wow.js"></script>
+
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/scrolltrigger.js"></script>
+    <script src="assets/js/plugins/smoothscroll.js"></script>
+    <script src="assets/js/plugins/smoothscroll-varticle.js"></script>
+    <script src="assets/js/plugins/scrolltoplugin.js"></script>
+    <script src="assets/js/plugins/swiper.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Back to top functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.legal-nav-list a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html> 

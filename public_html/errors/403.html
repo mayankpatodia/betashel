@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1">
+    
+    <!-- SEO Meta Tags -->
+    <title>403 - Access Denied | Elevative</title>
+    <meta name="description" content="You don't have permission to access this page. Please contact us for assistance.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/icon-white.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Custom 404 Styles -->
+    <style>
+        .error-page-area {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-page-area::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.03) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(255,255,255,0.02) 0%, transparent 50%);
+            animation: floatBackground 20s ease-in-out infinite;
+        }
+        
+        @keyframes floatBackground {
+            0%, 100% { transform: translate(-10%, -10%) rotate(0deg); }
+            50% { transform: translate(10%, 10%) rotate(180deg); }
+        }
+        
+        .error-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .error-number {
+            font-size: clamp(120px, 20vw, 200px);
+            font-weight: 900;
+            background: linear-gradient(45deg, #fff, #ccc, #fff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            text-shadow: 0 0 50px rgba(255,255,255,0.1);
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .error-title {
+            font-size: clamp(24px, 4vw, 36px);
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .error-description {
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .error-btn {
+            padding: 14px 28px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 2px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .error-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-color: #555;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .error-btn:hover::before {
+            left: 100%;
+        }
+        
+        .error-btn.primary {
+            background: linear-gradient(135deg, #333, #000);
+            border-color: #555;
+        }
+        
+        .search-form {
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 16px 24px;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-element {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 15s linear infinite;
+        }
+        
+        .floating-element:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { left: 20%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { left: 30%; animation-delay: 4s; }
+        .floating-element:nth-child(4) { left: 40%; animation-delay: 6s; }
+        .floating-element:nth-child(5) { left: 50%; animation-delay: 8s; }
+        .floating-element:nth-child(6) { left: 60%; animation-delay: 10s; }
+        .floating-element:nth-child(7) { left: 70%; animation-delay: 12s; }
+        .floating-element:nth-child(8) { left: 80%; animation-delay: 14s; }
+        .floating-element:nth-child(9) { left: 90%; animation-delay: 16s; }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .error-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.4);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .error-btn {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="error-page">
+
+    <div class="error-page-area">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <div class="error-content">
+            <div class="error-number">403</div>
+            <h1 class="error-title">Access Denied</h1>
+            <p class="error-description">
+                Oops! You don't have permission to access this page.
+            </p>
+            
+            <div class="error-actions">
+                <a href="index.html" class="error-btn primary">
+                    <i class="fa-solid fa-home"></i> Back to Home
+                </a>
+                <a href="contact.php" class="error-btn">
+                    <i class="fa-solid fa-envelope"></i> Contact Us
+                </a>
+            </div>
+            
+            <div class="search-form">
+                <input type="text" class="search-input" placeholder="Search for pages, services, or content..." id="searchInput">
+            </div>
+        </div>
+        
+        <div class="error-footer">
+            <p>&copy; 2025 Elevative. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/vendor/jquery.min.js"></script>
+    <script>
+        // Simple search functionality
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = this.value.toLowerCase();
+                if (query.includes('home') || query.includes('index')) {
+                    window.location.href = 'index.html';
+                } else if (query.includes('about')) {
+                    window.location.href = 'about.html';
+                } else if (query.includes('service')) {
+                    window.location.href = 'services.html';
+                } else if (query.includes('pricing') || query.includes('price')) {
+                    window.location.href = 'pricing.html';
+                } else if (query.includes('contact')) {
+                    window.location.href = 'contact.php';
+                } else {
+                    // Default to home if no match
+                    window.location.href = 'index.html';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html> 

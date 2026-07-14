@@ -64,7 +64,7 @@
       rtsJs.gsapAnimationImageRevel();
       rtsJs.gsapScrollingText();
       rtsJs.gsapAnimationImageScale();
-      rtsJs.serviceHoverImageRevel();
+      // rtsJs.serviceHoverImageRevel();
       rtsJs.imageParalax();
       rtsJs.swiperActivation();
       rtsJs.tiltAnimation();
@@ -342,21 +342,21 @@
 
     serviceHoverImageRevel: function (e) {
       $(document).ready(function () {
-        let rts_service_item_1 = gsap.utils.toArray(".rts-service-animation");
-        const serviceImgItems = document.querySelectorAll(".rts-service-item-1");
+        // let rts_service_item_1 = gsap.utils.toArray(".rts-service-animation");
+        // const serviceImgItems = document.querySelectorAll(".rts-service-item-1");
 
-        function followImageCursor(event, serviceImgItem) {
-          const contentBox = serviceImgItem.getBoundingClientRect();
-          const dx = event.clientX - contentBox.left;
-          const dy = event.clientY - contentBox.top;
-          serviceImgItem.children[4].style.transform = `translate(${dx}px, ${dy}px)`;
-        }
+        // function followImageCursor(event, serviceImgItem) {
+        //   const contentBox = serviceImgItem.getBoundingClientRect();
+        //   const dx = event.clientX - contentBox.left;
+        //   const dy = event.clientY - contentBox.top;
+        //   serviceImgItem.children[4].style.transform = `translate(${dx}px, ${dy}px)`;
+        // }
 
-        serviceImgItems.forEach((item, i) => {
-          item.addEventListener("mousemove", (event) => {
-            followImageCursor(event, item);
-          });
-        });
+        // serviceImgItems.forEach((item, i) => {
+        //   item.addEventListener("mousemove", (event) => {
+        //     followImageCursor(event, item);
+        //   });
+        // });
       });
     },
 

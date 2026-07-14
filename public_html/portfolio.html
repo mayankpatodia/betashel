@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-style-mode" content="1">
+
+    <!-- SEO Meta Tags -->
+    <title>Portfolio - Our Work | Elevative Digital Growth Agency</title>
+    <meta name="description" content="Explore Elevative's portfolio of web design, app development, branding, and digital marketing projects. See how we've transformed businesses across India.">
+    <meta name="keywords" content="portfolio, web design examples, branding projects, website development, digital agency work, client projects, elevative portfolio">
+    <meta name="author" content="Elevative - Code Verge Labs">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portfolio - Crafted With Purpose & Precision | Elevative">
+    <meta property="og:description" content="A curated selection of digital experiences built for real businesses — from startups to established brands.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elevative.xyz/portfolio.html">
+    <meta property="og:image" content="https://elevative.xyz/assets/images/logo/logo-black.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio - Crafted With Purpose & Precision | Elevative">
+    <meta name="twitter:description" content="A curated selection of digital experiences built for real businesses.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://elevative.xyz/portfolio.html">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo/icon-white.png">
+    <link rel="apple-touch-icon" href="assets/images/logo/icon-white.png">
+
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* ===========================
+           PORTFOLIO PAGE STYLES
+           =========================== */
+
+        /* Portfolio card shared styles */
+        .portfolio-card {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #1a1a1a;
+            text-decoration: none !important;
+            cursor: pointer;
+            will-change: transform;
+        }
+        .portfolio-thumbnail {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        .portfolio-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        filter 0.5s ease;
+            filter: brightness(0.75);
+        }
+        .portfolio-card:hover .portfolio-thumbnail img {
+            transform: scale(1.07);
+            filter: brightness(0.45);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.92) 0%,
+                rgba(0,0,0,0.55) 28%,
+                rgba(0,0,0,0.15) 55%,
+                transparent 75%
+            );
+            transition: background 0.4s ease;
+        }
+        .portfolio-card:hover .portfolio-overlay {
+            background: linear-gradient(
+                to top,
+                rgba(0,0,0,0.96) 0%,
+                rgba(0,0,0,0.7) 38%,
+                rgba(0,0,0,0.3) 65%,
+                transparent 85%
+            );
+        }
+        .portfolio-info {
+            width: 100%;
+            padding: 0 28px 24px;
+        }
+        /* Tag — hidden by default */
+        .portfolio-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.22);
+            padding: 4px 11px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            backdrop-filter: blur(6px);
+            background: rgba(255,255,255,0.06);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+        }
+        .portfolio-card:hover .portfolio-tag {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Title — always visible */
+        .portfolio-title {
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            color: #fff !important;
+            margin-bottom: 4px !important;
+            line-height: 1.25 !important;
+        }
+        /* URL — hidden by default */
+        .portfolio-url {
+            font-size: 12px;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 14px;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.28s ease 0.08s, transform 0.28s ease 0.08s;
+        }
+        .portfolio-card:hover .portfolio-url {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Button — hidden by default */
+        .portfolio-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.22);
+            padding: 8px 18px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease 0.12s,
+                        transform 0.3s ease 0.12s,
+                        background 0.25s ease;
+        }
+        .portfolio-card:hover .portfolio-link-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .portfolio-link-btn:hover {
+            background: rgba(255,255,255,0.22);
+        }
+
+        /* ===========================
+           PORTFOLIO PAGE SPECIFIC
+           =========================== */
+        .portfolio-page-area {
+            background: var(--color-primary, #141414);
+            padding: 80px 0 100px;
+        }
+
+        /* Filter tabs */
+        .portfolio-filter-bar {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .filter-btn {
+            display: inline-flex !important;
+            align-items: center;
+            width: auto !important;
+            flex-shrink: 0;
+            padding: 9px 22px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50px;
+            background: transparent;
+            color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            outline: none;
+            box-shadow: none;
+        }
+        .filter-btn:hover {
+            border-color: rgba(255,255,255,0.35);
+            color: #fff;
+        }
+        .filter-btn.active {
+            background: #fff;
+            border-color: #fff;
+            color: #141414;
+        }
+        .filter-count {
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 2px 7px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+        .filter-btn.active .filter-count {
+            color: #141414;
+            background: rgba(0,0,0,0.1);
+        }
+
+        /* Portfolio grid items */
+        .portfolio-grid-item {
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .portfolio-grid-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .portfolio-grid-item.hidden {
+            display: none;
+        }
+
+        /* Card heights */
+        .portfolio-card.h-large { height: 460px; }
+        .portfolio-card.h-medium { height: 360px; }
+        .portfolio-card.h-small { height: 280px; }
+
+        /* Detail section */
+        .portfolio-detail-strip {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .portfolio-tech-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            background: rgba(0,0,0,0.4);
+            border-radius: 6px;
+            padding: 4px 9px;
+            margin-left: 4px;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Featured card badge */
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            color: #141414;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        /* CTA standalone button styles */
+        .cta-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: #fff;
+            color: #141414 !important;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid #fff;
+            text-decoration: none !important;
+            transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+        }
+        .cta-btn-primary i {
+            color: #141414 !important;
+            font-size: 13px;
+            transition: transform 0.2s ease;
+        }
+        .cta-btn-primary:hover {
+            background: #e8e8e8;
+            border-color: #e8e8e8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,255,255,0.12);
+        }
+        .cta-btn-primary:hover i { transform: translate(2px, -2px); }
+        .cta-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: transparent;
+            color: rgba(255,255,255,0.6) !important;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-decoration: none !important;
+            transition: all 0.25s ease;
+        }
+        .cta-btn-secondary:hover {
+            border-color: rgba(255,255,255,0.5);
+            color: #fff !important;
+        }
+        .portfolio-cta-area {
+            background: #1F1F25;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-cta-area::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .portfolio-cta-area .cta-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            display: block;
+            margin-bottom: 20px;
+        }
+        .portfolio-cta-area h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .portfolio-cta-area p {
+            color: rgba(255,255,255,0.5);
+            max-width: 460px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+        .portfolio-cta-area .btn-group {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 991px) {
+            .portfolio-card.h-large { height: 320px; }
+            .portfolio-card.h-medium { height: 280px; }
+            .portfolio-cta-area h2 { font-size: 36px; }
+        }
+        @media only screen and (max-width: 575px) {
+            .portfolio-card.h-large,
+            .portfolio-card.h-medium,
+            .portfolio-card.h-small { height: 240px; }
+            .portfolio-filter-bar { gap: 8px; flex-direction: row !important; }
+            .filter-btn { padding: 7px 14px; font-size: 11px; width: auto !important; }
+        }
+    </style>
+</head>
+
+<body class="inner-page portfolio">
+
+    <!-- header area start -->
+    <header class="header-area header-one header--sticky">
+        <div class="header-container-one">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo/logo-white.png" alt="Elevative logo">
+                </a>
+                <div class="header-right">
+
+                    <nav class="nav-area drop-down-rts">
+                        <ul class="navbar-nav-1">
+                            <li class="menu-item main-nav-on">
+                                <a href="index.html"><span class="rolling-text">Home</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="about.html"><span class="rolling-text">About</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="services.html"><span class="rolling-text">Services</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="pricing.html"><span class="rolling-text">Pricing</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on active">
+                                <a href="portfolio.html"><span class="rolling-text">Portfolio</span></a>
+                            </li>
+                            <li class="menu-item main-nav-on">
+                                <a href="contact.php"><span class="rolling-text">Contact</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="action-area">
+                        <div class="menu-btn">
+                            <div class="rts-offcanvas-wrapper">
+                                <div class="container-menu">
+                                    <div class="action-menu">
+                                        <div class="close-event"></div>
+                                        <div class="open-event">
+                                            <div class="burger">
+                                                <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-close" data-v-649bbaab="">
+                                                    <line x1="13.788" y1="1.28816" x2="1.06011" y2="14.0161" stroke="currentColor" stroke-width="1.2"></line>
+                                                    <line x1="1.06049" y1="1.43963" x2="13.7884" y2="14.1675" stroke="currentColor" stroke-width="1.2"></line>
+                                                </svg>
+                                                <svg viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-burger" data-v-649bbaab="">
+                                                    <line x1="18" y1="0.6" y2="0.6" stroke="currentColor" stroke-width="1.2" data-v-649bbaab=""></line>
+                                                    <line x1="18" y1="5.7167" y2="5.7167" stroke="currentColor" stroke-width="1.2" data-v-649bbaab=""></line>
+                                                    <line x1="18" y1="10.8334" y2="10.8334" stroke="currentColor" stroke-width="1.2" data-v-649bbaab=""></line>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rts-fs-menu">
+                                    <div class="rts-fs-container row">
+                                        <div class="rts-fs--nav col-12 col-md-6">
+                                            <ul id="primary-menu" class="navbar-nav-button">
+                                                <li id="menu-item-76" class="menu-item">
+                                                    <a href="index.html">Home</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="services.html">Services</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="pricing.html">Pricing</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="portfolio.html">Portfolio</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="contact.php">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="rts-fs--contacts col-12 col-md-6">
+                                            <div class="contact-inner">
+                                                <div class="contact-information">
+                                                    <h2 class="heading-title">Get In Touch</h2>
+                                                    <div class="contact">
+                                                        <ul>
+                                                            <li><a href="mailto:contact@elevative.xyz" class="mail">contact@elevative.xyz</a></li>
+                                                            <li><a href="tel:+919830778548" class="number">+91 983 077 8548</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="rts-social-area-one">
+                                                        <ul>
+                                                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                                            <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+
+    <!-- breadcrumb area start -->
+    <div class="rts-breadcrumb-area bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="baread-crumb-main-wrapper pt--100">
+                        <div class="inner">
+                            <h1 class="title rts_hero__title">Our Work</h1>
+                            <span class="bg-text">Portfolio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb area end -->
+
+
+    <!-- portfolio grid area start -->
+    <div class="portfolio-page-area bg-dark-1">
+        <div class="container">
+
+            <!-- Intro row -->
+            <div class="row mb--50">
+                <div class="col-lg-7">
+                    <span class="sub-title">Crafted With Purpose</span>
+                    <h2 class="title quote mt--10 mb--20">Every project tells<br>a story of growth.</h2>
+                    <p class="disc" style="color: #74787C; max-width: 520px; line-height: 1.8;">
+                        We partner with ambitious businesses to build digital experiences that
+                        are fast, beautiful, and built to convert. Below is a selection of the 
+                        work we're proud of.
+                    </p>
+                </div>
+                <div class="col-lg-5 d-flex align-items-end justify-content-lg-end mt_sm--30">
+                    <a href="https://wa.me/919830778548?text=Hi%2C%20I%20would%20like%20to%20start%20a%20project%20with%20Elevative" target="_blank" rel="noopener noreferrer" class="learn-more-btn" style="color:#fff;">Start Your Project <i class="fa-solid fa-arrow-up-right" style="color:#fff; border-color:rgba(255,255,255,0.5);"></i></a>
+                </div>
+            </div>
+
+            <!-- Filter bar -->
+            <div class="portfolio-filter-bar">
+                <button class="filter-btn active" data-filter="all">All <span class="filter-count">5</span></button>
+                <button class="filter-btn" data-filter="industry">Industry <span class="filter-count">1</span></button>
+                <button class="filter-btn" data-filter="finance">Finance <span class="filter-count">1</span></button>
+                <button class="filter-btn" data-filter="law">Law <span class="filter-count">1</span></button>
+                <button class="filter-btn" data-filter="branding">Branding <span class="filter-count">1</span></button>
+                <button class="filter-btn" data-filter="travel">Travel <span class="filter-count">1</span></button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="row g-4" id="portfolio-grid">
+
+                <!-- ROW 1: Ananta Woods (left) + Sirani Creations (right) -->
+                <div class="col-lg-6 col-md-6 col-sm-12 portfolio-grid-item" data-category="travel">
+                    <a href="https://anantawoods.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-card h-large">
+                        <div class="portfolio-thumbnail">
+                            <img src="assets/images/portfolio/ananta-woods.jpg"
+                                 alt="Ananta Woods website"
+                                 loading="lazy"
+                                 onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://anantawoods.vercel.app/?w=700&h=500'">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-tag">Travel</span>
+                                <h3 class="portfolio-title">Ananta Woods</h3>
+                                <p class="portfolio-url">anantawoods.vercel.app</p>
+                                <span class="portfolio-link-btn">Visit Live Site <i class="fa-solid fa-arrow-up-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 portfolio-grid-item" data-category="branding">
+                    <a href="https://www.siranicreations.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card h-large">
+                        <div class="portfolio-thumbnail">
+                            <img src="assets/images/portfolio/sirani-creations.jpg"
+                                 alt="Sirani Creations website"
+                                 loading="lazy"
+                                 onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://www.siranicreations.com/?w=700&h=500'">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-tag">Branding</span>
+                                <h3 class="portfolio-title">Sirani Creations</h3>
+                                <p class="portfolio-url">siranicreations.com</p>
+                                <span class="portfolio-link-btn">Visit Live Site <i class="fa-solid fa-arrow-up-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- ROW 2: Vinayak Engineering + S9 Finellect + AALC -->
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-grid-item" data-category="industry">
+                    <a href="https://vinayakengicom.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card h-medium">
+                        <span class="featured-badge">Featured</span>
+                        <div class="portfolio-thumbnail">
+                            <img src="assets/images/portfolio/vinayak-engineering.jpg"
+                                 alt="Vinayak Engineering website"
+                                 loading="lazy"
+                                 onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://vinayakengicom.com/?w=600&h=500'">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-tag">Industry</span>
+                                <h3 class="portfolio-title">Vinayak Engineering</h3>
+                                <p class="portfolio-url">vinayakengicom.com</p>
+                                <span class="portfolio-link-btn">Visit Live Site <i class="fa-solid fa-arrow-up-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-grid-item" data-category="finance">
+                    <a href="https://s9finellect.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card h-medium">
+                        <div class="portfolio-thumbnail">
+                            <img src="assets/images/portfolio/s9-finellect.jpg"
+                                 alt="S9 Finellect website"
+                                 loading="lazy"
+                                 onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://s9finellect.com/?w=600&h=500'">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-tag">Finance</span>
+                                <h3 class="portfolio-title">S9 Finellect</h3>
+                                <p class="portfolio-url">s9finellect.com</p>
+                                <span class="portfolio-link-btn">Visit Live Site <i class="fa-solid fa-arrow-up-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-grid-item" data-category="law">
+                    <a href="https://aalc.co.in/" target="_blank" rel="noopener noreferrer" class="portfolio-card h-medium">
+                        <div class="portfolio-thumbnail">
+                            <img src="assets/images/portfolio/aalc.jpg"
+                                 alt="AALC website"
+                                 loading="lazy"
+                                 onerror="this.onerror=null;this.src='https://s0.wp.com/mshots/v1/https://aalc.co.in/?w=600&h=500'">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <span class="portfolio-tag">Law</span>
+                                <h3 class="portfolio-title">AALC</h3>
+                                <p class="portfolio-url">aalc.co.in</p>
+                                <span class="portfolio-link-btn">Visit Live Site <i class="fa-solid fa-arrow-up-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <!-- portfolio grid end -->
+
+        </div>
+    </div>
+    <!-- portfolio grid area end -->
+
+
+    <!-- CTA area -->
+    <div class="portfolio-cta-area">
+        <div class="container">
+            <span class="cta-eyebrow">Ready to Build Something Great?</span>
+            <h2 class="quote">Your next project<br>starts here.</h2>
+            <p>Let's collaborate to create a digital experience your audience will remember. From concept to launch — we handle it all.</p>
+                <div class="btn-group">
+                    <a href="https://wa.me/919830778548?text=Hi%2C%20I%20would%20like%20to%20start%20a%20project%20with%20Elevative" target="_blank" rel="noopener noreferrer" class="cta-btn-primary">Start a Project <i class="fa-solid fa-arrow-up-right"></i></a>
+                    <a href="pricing.html" class="cta-btn-secondary">View Pricing</a>
+                </div>
+        </div>
+    </div>
+    <!-- CTA area end -->
+
+
+    <!-- Footer -->
+    <div class="rts-footer-two-area bg-footer-2 bg_image-1">
+        <div class="container-140">
+            <div class="row">
+                <div class="col-lg-12 pt--130 pt_sm--60 pb--100 pb_sm--60">
+                    <div class="footer-two-wrapper-content">
+                        <div class="footer-left-two">
+                            <a href="index.html" class="logo">
+                                <img src="assets/images/logo/logo-white.png" alt="Elevative logo">
+                            </a>
+                            <p class="disc">
+                                For your daily dose of branding inspiration, <br>
+                                follow our journey here.
+                            </p>
+                            <div class="rts-social-area-one">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer-right-two">
+                            <div class="contact-information">
+                                <h5 class="title">Contact Info</h5>
+                                <a href="mailto:contact@elevative.xyz" class="mail">contact@elevative.xyz</a>
+                                <a href="tel:+919830778548" class="number">+91 983 077 8548</a>
+                                <a href="#" class="map">India</a>
+                            </div>
+                            <div class="contact-information">
+                                <h5 class="title">Legal</h5>
+                                <a href="privacy-policy.html" class="map">Privacy Policy</a>
+                                <a href="terms-of-service.html" class="map">Terms of Service</a>
+                            </div>
+                            <div class="contact-information input">
+                                <h5 class="title">Subscribe Newsletter</h5>
+                                <p class="map">Subscribe our newsletter for future updates. don't <br> worry we don't spam your email address</p>
+                                <form action="#" class="form-footer-2">
+                                    <label for="email-pf"><i class="fa-regular fa-envelope"></i></label>
+                                    <input id="email-pf" type="email" placeholder="Enter your email..." required>
+                                    <button type="submit">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copy-right-area-start-two">
+                        <p class="left">2025 © Code Verge Labs. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer end -->
+
+
+    <!-- Loading screen -->
+    <div class="loading-screen" id="loading-screen">
+        <span class="bar top-bar"></span>
+        <span class="bar down-bar"></span>
+        <span class="progress-line"></span>
+        <span class="loading-counter"> </span>
+    </div>
+
+    <div class="bg-noise"></div>
+
+    <!-- back to top -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+        </svg>
+    </div>
+
+    <!-- cursor -->
+    <div class="rts-cursor cursor-outer" data-default="yes" data-link="yes" data-slider="no">
+        <span class="fn-cursor"></span>
+    </div>
+    <div class="rts-cursor cursor-inner" data-default="yes" data-link="yes" data-slider="no">
+        <span class="fn-cursor">
+            <span class="fn-left"></span>
+            <span class="fn-right"></span>
+        </span>
+    </div>
+
+    <!-- dark light switcher -->
+    <div class="modal-sidebar-scroll rts-dark-light">
+        <ul>
+            <li class="go-dark-w"><span>Dark</span><i class="rts-go-dark fal fa-moon"></i></li>
+            <li class="go-light-w"><span>Light</span><i class="rts-go-light fa-light fa-brightness"></i></li>
+        </ul>
+    </div>
+
+
+    <script defer src="assets/js/vendor/jquery.min.js"></script>
+    <script defer src="assets/js/plugins/bootstrap.min.js"></script>
+    <script defer src="assets/js/plugins/contact.form.js"></script>
+    <script defer src="assets/js/vendor/waypoint.js"></script>
+    <script defer src="assets/js/plugins/swiper.js"></script>
+    <script defer src="assets/js/plugins/resizer-sensor.js"></script>
+    <script defer src="assets/js/plugins/sticky-sidebar.js"></script>
+    <script defer src="assets/js/plugins/isotop.js"></script>
+    <script defer src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script defer src="assets/js/plugins/smoothscroll-varticle.js"></script>
+    <script defer src="assets/js/vendor/gsap.js"></script>
+    <!-- Patch: provides mock ScrollSmoother so main.js doesn't throw -->
+    <script defer src="assets/js/lenis-patch.js"></script>
+    <script defer src="assets/js/plugins/scrolltrigger.js"></script>
+    <script defer src="assets/js/plugins/scrolltoplugin.js"></script>
+    <script defer src="assets/js/plugins/splittext.js"></script>
+    <script defer src="assets/js/plugins/smoothscroll.js"></script>
+    <script defer src="assets/js/plugins/scrollmagic.js"></script>
+    <script defer src="assets/js/plugins/animate-scrollmagic.js"></script>
+    <script defer src="assets/js/plugins/tilt.js"></script>
+    <script defer src="assets/js/plugins/counterup.js"></script>
+    <script defer src="assets/js/vendor/wow.js"></script>
+    <script defer src="assets/js/main.js"></script>
+
+    <!-- Portfolio filter + scroll animations -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // ---- Scroll-in animation ----
+        const items = document.querySelectorAll('.portfolio-grid-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    const idx = parseInt(entry.target.dataset.idx || 0);
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, idx * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        items.forEach((item, i) => {
+            item.dataset.idx = i;
+            observer.observe(item);
+        });
+
+        // ---- Filter ----
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                // Update active state
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                document.querySelectorAll('.portfolio-grid-item').forEach((item, i) => {
+                    const cat = item.dataset.category;
+                    const show = filter === 'all' || cat === filter;
+
+                    if (show) {
+                        item.classList.remove('hidden');
+                        // Re-trigger animation
+                        item.classList.remove('visible');
+                        setTimeout(() => item.classList.add('visible'), i * 80);
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('visible');
+                    }
+                });
+            });
+        });
+
+    });
+    </script>
+
+</body>
+
+</html>
